@@ -14,16 +14,16 @@
   "devDependencies": {
     "@tsconfig/svelte": "^1.0.10",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.1.10",
-    "prettier": "^2.2.0",
-    "prettier-plugin-svelte": "^1.4.1",
-    "sirv-cli": "^1.0.8",
-    "svelte": "^3.30.0",
-    "svelte-check": "^1.1.17",
-    "svelte-preprocess": "^4.6.1",
-    "tailwindcss": "^2.0.1-compat",
-    "typescript": "^4.1.2",
-    "vite": "^1.0.0-rc.13",
+    "postcss": "^8.2.8",
+    "prettier": "^2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "sirv-cli": "^1.0.11",
+    "svelte": "^3.35.0",
+    "svelte-check": "^1.2.5",
+    "svelte-preprocess": "^4.6.9",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.2.3",
+    "vite": "^2.0.5",
     "vite-plugin-svelte": "^3.0.1"
   }
 }
