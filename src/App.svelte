@@ -3,4 +3,10 @@
   import routes from './routes';
 </script>
 
-<Router {routes} />
+<header class="text-white main-header margin-page">
+  <div class="app-name">Formulir</div>
+</header>
+
+<main class="margin-page">
+  <Router {routes} />
+</main>

@@ -11,5 +11,22 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
+  font-family: 15px;
   flex-direction: column;
+}
+
+.main-header {
+  padding: 10px;
+  background-color: #475665;
+}
+.app-name {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+@media (min-width: 400px) {
+  .margin-page {
+    padding-right: calc(5% - 30px);
+    padding-left: calc(5% - 30px);
+  }
 }
