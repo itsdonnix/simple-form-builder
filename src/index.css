@@ -52,7 +52,7 @@ body {
   fill: var(--main-bg-color);
 }
 
-@media (min-width: 400px) {
+@media (min-width: 768px) {
   .margin-page {
     padding-right: calc(5% - 30px);
     padding-left: calc(5% - 30px);
