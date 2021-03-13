@@ -5,6 +5,8 @@
 :root {
   width: 100vw;
   height: 100vh;
+  --main-font-color: #22272c;
+  --main-bg-color: #475665;
 }
 
 body {
@@ -12,12 +14,13 @@ body {
   height: 100%;
   display: flex;
   font-family: 15px;
+  color: var(--main-font-color);
   flex-direction: column;
 }
 
 .main-header {
   padding: 10px;
-  background-color: #475665;
+  background-color: var(--main-bg-color);
 }
 .app-name {
   font-size: 1.3em;
