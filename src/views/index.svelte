@@ -1,6 +1,7 @@
 <script>
   import { mdiPlusCircle } from '@mdi/js';
   import Icon from '../components/Icon.svelte';
+  import { link } from 'svelte-spa-router';
 </script>
 
 <div class="mt-4">
@@ -8,8 +9,9 @@
   <div class="m-3">
     <a
       class="flex flex-col new-form-card--wrapper"
-      href="/form/create"
-      title="Buat formulir baru">
+      href="/form/new"
+      title="Buat formulir baru"
+      use:link>
       <div class="flex items-center justify-center new-form-card">
         <Icon path={mdiPlusCircle} />
       </div>
