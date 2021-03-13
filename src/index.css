@@ -7,6 +7,8 @@
   height: 100vh;
   --main-font-color: #22272c;
   --main-bg-color: #475665;
+  --card-bg-color: #e8edf2;
+  --card-hover-bg-color: hsl(210, 28%, 90%);
 }
 
 body {
@@ -25,6 +27,29 @@ body {
 .app-name {
   font-size: 1.3em;
   font-weight: bold;
+}
+
+.h3 {
+  font-size: 1.1em;
+}
+
+.new-form-card--wrapper {
+  max-width: 200px;
+}
+
+.new-form-card {
+  min-height: 100px;
+  background-color: var(--card-bg-color);
+  border-radius: 5px;
+  color: var(--main-bg-color);
+}
+
+.new-form-card:hover {
+  background-color: var(--card-hover-bg-color);
+}
+
+.new-form-card .icon {
+  fill: var(--main-bg-color);
 }
 
 @media (min-width: 400px) {
