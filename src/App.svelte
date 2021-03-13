@@ -7,6 +7,4 @@
   <div class="app-name">Formulir</div>
 </header>
 
-<main class="margin-page">
-  <Router {routes} />
-</main>
+<Router {routes} />
