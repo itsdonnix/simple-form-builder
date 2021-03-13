@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
   --main-font-color: #22272c;
   --main-bg-color: #475665;
   --card-bg-color: #e8edf2;
