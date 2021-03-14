@@ -3,7 +3,7 @@ module.exports = {
   semi: true,
   singleQuote: true,
   printWidth: 80,
-  plugins: ['prettier-plugin-svelte'],
+  plugins: ['./node_modules/prettier-plugin-svelte'],
   svelteStrictMode: false,
-  svelteBracketNewLine: false
+  svelteBracketNewLine: false,
 };
