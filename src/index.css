@@ -71,6 +71,10 @@ body.bg-color-2 {
   background-color: var(--card-hover-bg-color);
 }
 
+.c-icon {
+  fill: var(--main-font-color);
+}
+
 .new-form-card .icon {
   fill: var(--main-bg-color);
 }
