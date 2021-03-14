@@ -1,9 +1,17 @@
 <script>
   import { onMount } from 'svelte';
+  import FormMeta from '../../components/FormMeta.svelte';
   import Tab from '../../components/Tab.svelte';
   import TabList from '../../components/TabList.svelte';
   import TabPanel from '../../components/TabPanel.svelte';
   import Tabs from '../../components/Tabs.svelte';
+
+  const defaultForm = {
+    title: 'Formulir tanpa judul',
+    description: 'Deskripsi formulir',
+  };
+
+  let form = { ...defaultForm };
 
   onMount(() => {
     document.body.classList.add('bg-color-2');
@@ -19,23 +27,27 @@
   </div>
 </div>
 
-<div class="w-full mx-5 my-10 bg-white md:mx-auto" style="max-width: 700px">
-  <Tabs>
-    <TabList>
-      <Tab>Pertanyaan</Tab>
-      <Tab>Hasil</Tab>
-    </TabList>
+<div class="flex flex-col items-center">
+  <div class="w-full mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
+    <Tabs>
+      <TabList>
+        <Tab>Pertanyaan</Tab>
+        <Tab>Hasil</Tab>
+      </TabList>
 
-    <TabPanel>
-      <div class="min-h-screen p-5">
-        <h2>Pertanyaan</h2>
-      </div>
-    </TabPanel>
+      <TabPanel>
+        <div class="min-h-screen p-5" tabindex="0">
+          <FormMeta
+            bind:title={form.title}
+            bind:description={form.description} />
+        </div>
+      </TabPanel>
 
-    <TabPanel>
-      <div class="min-h-screen p-5">
-        <h2>Hasil</h2>
-      </div>
-    </TabPanel>
-  </Tabs>
+      <TabPanel>
+        <div class="min-h-screen p-5" tabindex="0">
+          <h2>Hasil</h2>
+        </div>
+      </TabPanel>
+    </Tabs>
+  </div>
 </div>
