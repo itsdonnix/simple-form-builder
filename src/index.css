@@ -48,6 +48,10 @@ body.bg-color-2 {
   color: #fff;
 }
 
+.btn--primary .c-icon {
+  fill: #fff;
+}
+
 .btn--primary:hover {
   background-color: var(--main-bg-hover-color);
 }
