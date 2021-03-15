@@ -54,7 +54,7 @@
         newQuestion = { ...newQuestion, ...questionTypeSelection };
         break;
       case 'essay':
-        newQuestion = { ...newQuestion, ...question };
+        newQuestion = { ...newQuestion, ...questionTypeEssay };
         break;
     }
     addQuestion(newQuestion);
