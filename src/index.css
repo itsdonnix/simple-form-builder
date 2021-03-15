@@ -30,6 +30,11 @@ body.bg-color-2 {
   background-color: #f2e2e2;
 }
 
+*:focus {
+  outline-width: thin !important;
+  outline-style: dashed !important;
+}
+
 .main-header {
   padding: 10px;
   background-color: var(--main-bg-color);
