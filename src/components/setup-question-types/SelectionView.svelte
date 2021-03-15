@@ -5,7 +5,7 @@
 
 <div class="flex p-5 question-selection-type preview">
   <div class="mr-1 text-lg">{number}.</div>
-  <div>
+  <div class="flex-1">
     <p class="text-lg whitespace-pre">
       {question.text}
       {#if question.required}
@@ -20,9 +20,14 @@
         </div>
       {/each}
       {#if question.hasOtherOption}
-        <div class="flex items-center mb-2 ">
+        <div class="flex items-center mb-2">
           <input class="inline-block mr-2" type="radio" disabled />
-          <div class="text-gray-500">Lainnya</div>
+          <input
+            class="flex-1 p-2 border border-gray-400 "
+            disabled
+            placeholder="Lainnya"
+            style="max-width: 300px"
+            type="text" />
         </div>
       {/if}
     </div>
