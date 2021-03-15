@@ -61,9 +61,9 @@
           rows="3" />
 
         {#if question.multiline}
-          <textarea class="p-2 mt-2 border" disabled placeholder="Masukkan jawaban Anda" rows="3" />
+          <textarea class="p-2 mt-2 border border-gray-400" disabled placeholder="Masukkan jawaban Anda" rows="3" />
         {:else}
-          <input disabled class="p-2 mt-2 border" placeholder="Masukkan jawaban Anda" type="text" />
+          <input disabled class="p-2 mt-2 border border-gray-400" placeholder="Masukkan jawaban Anda" type="text" />
         {/if}
       </div>
     </div>
