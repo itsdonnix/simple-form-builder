@@ -7,6 +7,7 @@
   import TabPanel from '../../components/TabPanel.svelte';
   import Tabs from '../../components/Tabs.svelte';
   import Selection from '../../components/setup-question-types/Selection.svelte';
+  import Text from '../../components/setup-question-types/Text.svelte';
 
   const defaultForm = {
     title: 'Formulir tanpa judul',
@@ -17,6 +18,11 @@
   const question = {
     text: 'Pertaanyaan',
     required: false,
+  };
+
+  const questionTypeEssay = {
+    ...question,
+    multiline: false,
   };
 
   const questionTypeSelection = {
@@ -88,6 +94,8 @@
           {#each form.questions as question, index}
             {#if question.type === 'selection'}
               <Selection bind:question {index} on:delete={deleteQuestion} />
+            {:else if question.type === 'essay'}
+              <Text bind:question {index} on:delete={deleteQuestion} />
             {/if}
           {/each}
           <div class="p-5">
