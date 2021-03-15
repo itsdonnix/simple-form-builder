@@ -2,6 +2,7 @@
   import { mdiTrashCanOutline } from '@mdi/js';
   import { createEventDispatcher, tick } from 'svelte';
   import Icon from '../Icon.svelte';
+  import TextView from './TextView.svelte';
 
   const emit = createEventDispatcher();
 
@@ -34,22 +35,7 @@
   tabindex="0">
   <!-- PREVIEW MODE -->
   {#if preview}
-    <div class="flex p-5 question-selection-type preview">
-      <div class="mr-1 text-lg">{index + 1}.</div>
-      <div class="flex flex-col flex-1">
-        <p class="text-lg whitespace-pre">
-          {question.text}
-          {#if question.required}
-            <span class="text-red-600">*</span>
-          {/if}
-        </p>
-        {#if question.multiline}
-          <textarea class="p-2 mt-2 border" disabled placeholder="Masukkan jawaban Anda" rows="3" />
-        {:else}
-          <input disabled class="p-2 mt-2 border" placeholder="Masukkan jawaban Anda" type="text" />
-        {/if}
-      </div>
-    </div>
+    <TextView number={index + 1} {question} />
     <!-- EDIT MODE -->
   {:else}
     <!-- TOP BAR -->
