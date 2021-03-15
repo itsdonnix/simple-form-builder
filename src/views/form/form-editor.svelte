@@ -32,6 +32,12 @@
     form.questions = [...form.questions, newQuestion];
   }
 
+  function deleteQuestion({ detail: index }) {
+    const _questions = form.questions;
+    _questions.splice(index, 1);
+    form.questions = _questions;
+  }
+
   function onSelectQuestionType({ detail: questionType }) {
     let newQuestion = { type: questionType, ...questionTypeSelection };
     addQuestion(newQuestion);
@@ -67,7 +73,10 @@
 
           {#each form.questions as question, index}
             {#if question.type === 'pilihan'}
-              <QuestionSelectionType bind:question number={index + 1} />
+              <QuestionSelectionType
+                bind:question
+                {index}
+                on:delete={deleteQuestion} />
             {/if}
           {/each}
           <div class="p-5">

@@ -1,11 +1,13 @@
 <script>
   import { mdiPlus, mdiTrashCanOutline } from '@mdi/js';
-  import { tick } from 'svelte';
+  import { createEventDispatcher, tick } from 'svelte';
   import Icon from './Icon.svelte';
   import SetupOtherOption from './SetupOtherOption.svelte';
 
+  const emit = createEventDispatcher();
+
   export let question;
-  export let number = 0;
+  export let index = 0;
 
   let preview = true;
 
@@ -52,15 +54,16 @@
 
 <div
   bind:this={self}
-  class="flex question-selection-type"
+  class="flex flex-col mt-2 question-selection-type"
   class:preview
+  class:bg-gray-100={!preview}
   on:click={onSelfClicked}
   on:focusout={(e) => (preview = !self.contains(e.relatedTarget))}
   tabindex="0">
   <!-- PREVIEW MODE -->
   {#if preview}
     <div class="flex p-5 question-selection-type preview">
-      <div class="mr-1 text-lg">{number}.</div>
+      <div class="mr-1 text-lg">{index + 1}.</div>
       <div>
         <p class="text-lg whitespace-pre">
           {question.text}
@@ -86,8 +89,21 @@
     </div>
     <!-- EDIT MODE -->
   {:else}
+    <!-- TOP BAR -->
+    <div class="flex p-1 border-b">
+      <div class="ml-auto">
+        <button
+          class="flex items-center px-3 py-2"
+          on:click={() => emit('delete', index)}
+          title="Hapus pertanyaan">
+          <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
+        </button>
+      </div>
+    </div>
+
+    <!-- QUESTION & OPTIONS -->
     <div
-      class="flex flex-col w-full p-5 bg-gray-100 question-selection-type-inputs"
+      class="flex flex-col w-full p-5 question-selection-type-inputs"
       style="height: 100%">
       <!-- QUESTION TEXT -->
       <textarea
@@ -123,29 +139,30 @@
           <SetupOtherOption
             on:delete={() => (question.hasOtherOption = false)} />
         {/if}
-
-        <div class="flex flex-col mt-2 md:flex-row">
-          <button class="flex items-center px-3 py-2" on:click={addOption}>
-            <Icon path={mdiPlus} width="25px" height="25px" />
-            Tambahkan Opsi
-          </button>
-          {#if !question.hasOtherOption}
-            <button
-              class="flex items-center px-3 py-2"
-              on:click={() => (question.hasOtherOption = true)}>
-              Tambahkan opsi "Lainnya"
-            </button>
-          {/if}
-          <label class="flex items-center px-3 py-2" tabindex="0">
-            <input type="checkbox" bind:checked={question.multiple} />
-            <div class="ml-2">Jawaban ganda</div>
-          </label>
-          <label class="flex items-center px-3 py-2" tabindex="0">
-            <input type="checkbox" bind:checked={question.required} />
-            <div class="ml-2">Harus diisi</div>
-          </label>
-        </div>
       </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="flex flex-col p-1 border-t md:flex-row">
+      <button class="flex items-center px-3 py-2" on:click={addOption}>
+        <Icon path={mdiPlus} width="25px" height="25px" />
+        Tambahkan Opsi
+      </button>
+      {#if !question.hasOtherOption}
+        <button
+          class="flex items-center px-3 py-2"
+          on:click={() => (question.hasOtherOption = true)}>
+          Tambahkan opsi "Lainnya"
+        </button>
+      {/if}
+      <label class="flex items-center px-3 py-2" tabindex="0">
+        <input type="checkbox" bind:checked={question.multiple} />
+        <div class="ml-2">Jawaban ganda</div>
+      </label>
+      <label class="flex items-center px-3 py-2" tabindex="0">
+        <input type="checkbox" bind:checked={question.required} />
+        <div class="ml-2">Harus diisi</div>
+      </label>
     </div>
   {/if}
 </div>
