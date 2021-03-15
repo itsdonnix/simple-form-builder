@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import ButtonAddQuestion from '../../components/ButtonAddQuestion.svelte';
   import FormMeta from '../../components/FormMeta.svelte';
   import Tab from '../../components/Tab.svelte';
@@ -28,6 +28,9 @@
 
   let form = { ...defaultForm };
 
+  // DOM Bindings
+  let questionPanel;
+
   function addQuestion(newQuestion) {
     form.questions = [...form.questions, newQuestion];
   }
@@ -39,8 +42,23 @@
   }
 
   function onSelectQuestionType({ detail: questionType }) {
-    let newQuestion = { type: questionType, ...questionTypeSelection };
+    let newQuestion = { type: questionType };
+    switch (questionType) {
+      case 'selection':
+        newQuestion = { ...newQuestion, ...questionTypeSelection };
+        break;
+      case 'essay':
+        newQuestion = { ...newQuestion, ...question };
+        break;
+    }
     addQuestion(newQuestion);
+    focusOnNewCreatedQuestion();
+  }
+
+  async function focusOnNewCreatedQuestion() {
+    await tick();
+    document.activeElement.blur();
+    questionPanel.querySelector('.setup--question-text').focus();
   }
 
   onMount(() => {
@@ -51,9 +69,7 @@
 
 <div class="p-2 bg-white form-actions">
   <div class="flex margin-page">
-    <button class="px-4 py-2 ml-auto font-bold btn btn--primary">
-      Kirim
-    </button>
+    <button class="px-4 py-2 ml-auto font-bold btn btn--primary"> Kirim </button>
   </div>
 </div>
 
@@ -66,13 +82,11 @@
       </TabList>
 
       <TabPanel>
-        <div class="p-5 " tabindex="0">
-          <FormMeta
-            bind:title={form.title}
-            bind:description={form.description} />
+        <div class="p-5 " tabindex="0" bind:this={questionPanel}>
+          <FormMeta bind:title={form.title} bind:description={form.description} />
 
           {#each form.questions as question, index}
-            {#if question.type === 'pilihan'}
+            {#if question.type === 'selection'}
               <Selection bind:question {index} on:delete={deleteQuestion} />
             {/if}
           {/each}

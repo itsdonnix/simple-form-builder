@@ -1,6 +1,6 @@
 <script>
   import { mdiPlus, mdiTrashCanOutline } from '@mdi/js';
-  import { createEventDispatcher, tick } from 'svelte';
+  import { createEventDispatcher, onMount, tick } from 'svelte';
   import Icon from '../Icon.svelte';
   import SetupOtherOption from '../SetupOtherOption.svelte';
 
@@ -9,7 +9,7 @@
   export let question;
   export let index = 0;
 
-  let preview = true;
+  let preview = false;
 
   if (!question.options.length) {
     question.options = ['Pilihan 1', 'Pilihan 2'];
@@ -37,7 +37,7 @@
     question.options = [..._options];
   }
 
-  async function onSelfClicked() {
+  async function focus() {
     const previewBefore = preview;
     preview = previewBefore && false;
     if (previewBefore) {
@@ -52,7 +52,7 @@
   class="flex flex-col mt-2 question-selection-type"
   class:preview
   class:bg-gray-100={!preview}
-  on:click={onSelfClicked}
+  on:click={focus}
   on:focusout={(e) => (preview = !self.contains(e.relatedTarget))}
   tabindex="0">
   <!-- PREVIEW MODE -->
@@ -101,7 +101,7 @@
         <textarea
           bind:this={fieldQuestionText}
           bind:value={question.text}
-          class="p-2"
+          class="p-2 setup--question-text"
           placeholder="Masukkan pertanyaan"
           type="text"
           rows="3" />
