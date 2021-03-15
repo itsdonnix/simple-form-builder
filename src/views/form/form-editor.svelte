@@ -1,6 +1,8 @@
 <script>
   import { onMount } from 'svelte';
+  import ButtonAddQuestion from '../../components/ButtonAddQuestion.svelte';
   import FormMeta from '../../components/FormMeta.svelte';
+  import QuestionSelectionType from '../../components/QuestionSelectionType.svelte';
   import Tab from '../../components/Tab.svelte';
   import TabList from '../../components/TabList.svelte';
   import TabPanel from '../../components/TabPanel.svelte';
@@ -9,9 +11,31 @@
   const defaultForm = {
     title: 'Formulir tanpa judul',
     description: 'Deskripsi formulir',
+    questions: [],
+  };
+
+  const question = {
+    text: 'Pertaanyaan',
+    required: false,
+  };
+
+  const questionTypeSelection = {
+    ...question,
+    options: [],
+    hasOtherOption: false,
+    multiple: false,
   };
 
   let form = { ...defaultForm };
+
+  function addQuestion(newQuestion) {
+    form.questions = [...form.questions, newQuestion];
+  }
+
+  function onSelectQuestionType({ detail: questionType }) {
+    let newQuestion = { type: questionType, ...questionTypeSelection };
+    addQuestion(newQuestion);
+  }
 
   onMount(() => {
     document.body.classList.add('bg-color-2');
@@ -36,10 +60,19 @@
       </TabList>
 
       <TabPanel>
-        <div class="min-h-screen p-5" tabindex="0">
+        <div class="p-5 " tabindex="0">
           <FormMeta
             bind:title={form.title}
             bind:description={form.description} />
+
+          {#each form.questions as question, index}
+            {#if question.type === 'pilihan'}
+              <QuestionSelectionType bind:question number={index + 1} />
+            {/if}
+          {/each}
+          <div class="p-5">
+            <ButtonAddQuestion on:onSelectQuestionType={onSelectQuestionType} />
+          </div>
         </div>
       </TabPanel>
 

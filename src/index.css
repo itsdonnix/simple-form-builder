@@ -75,6 +75,29 @@ body.bg-color-2 {
   fill: var(--main-font-color);
 }
 
+input[type='radio'] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type='checkbox'] {
+  width: 17.5px;
+  height: 17.5px;
+}
+
+.delete-question-button {
+  @apply hidden;
+}
+
+.setup--question-item:hover .delete-question-button,
+.setup--question-item:focus-within .delete-question-button {
+  display: initial;
+}
+
+.question-selection-type.preview:hover {
+  @apply bg-gray-200;
+}
+
 .new-form-card .icon {
   fill: var(--main-bg-color);
 }
