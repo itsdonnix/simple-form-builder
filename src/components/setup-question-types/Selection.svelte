@@ -1,8 +1,8 @@
 <script>
   import { mdiPlus, mdiTrashCanOutline } from '@mdi/js';
   import { createEventDispatcher, tick } from 'svelte';
-  import Icon from './Icon.svelte';
-  import SetupOtherOption from './SetupOtherOption.svelte';
+  import Icon from '../Icon.svelte';
+  import SetupOtherOption from '../SetupOtherOption.svelte';
 
   const emit = createEventDispatcher();
 

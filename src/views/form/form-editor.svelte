@@ -2,11 +2,11 @@
   import { onMount } from 'svelte';
   import ButtonAddQuestion from '../../components/ButtonAddQuestion.svelte';
   import FormMeta from '../../components/FormMeta.svelte';
-  import QuestionSelectionType from '../../components/QuestionSelectionType.svelte';
   import Tab from '../../components/Tab.svelte';
   import TabList from '../../components/TabList.svelte';
   import TabPanel from '../../components/TabPanel.svelte';
   import Tabs from '../../components/Tabs.svelte';
+  import Selection from '../../components/setup-question-types/Selection.svelte';
 
   const defaultForm = {
     title: 'Formulir tanpa judul',
@@ -73,10 +73,7 @@
 
           {#each form.questions as question, index}
             {#if question.type === 'pilihan'}
-              <QuestionSelectionType
-                bind:question
-                {index}
-                on:delete={deleteQuestion} />
+              <Selection bind:question {index} on:delete={deleteQuestion} />
             {/if}
           {/each}
           <div class="p-5">
