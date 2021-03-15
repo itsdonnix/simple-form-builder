@@ -22,17 +22,12 @@
 
   async function focusOnLastOption() {
     await tick();
-    const optionItems = optionItemsParent.querySelectorAll(
-      '.setup--question-item:not(.other-option-item) input'
-    );
+    const optionItems = optionItemsParent.querySelectorAll('.setup--question-item:not(.other-option-item) input');
     optionItems.length && optionItems[optionItems.length - 1].focus();
   }
 
   function addOption() {
-    question.options = [
-      ...question.options,
-      `Pilihan ` + (question.options.length + 1),
-    ];
+    question.options = [...question.options, `Pilihan ` + (question.options.length + 1)];
     focusOnLastOption();
   }
 
@@ -92,53 +87,41 @@
     <!-- TOP BAR -->
     <div class="flex p-1 border-b">
       <div class="ml-auto">
-        <button
-          class="flex items-center px-3 py-2"
-          on:click={() => emit('delete', index)}
-          title="Hapus pertanyaan">
+        <button class="flex items-center px-3 py-2" on:click={() => emit('delete', index)} title="Hapus pertanyaan">
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
     </div>
 
     <!-- QUESTION & OPTIONS -->
-    <div
-      class="flex flex-col w-full p-5 question-selection-type-inputs"
-      style="height: 100%">
-      <!-- QUESTION TEXT -->
-      <textarea
-        bind:this={fieldQuestionText}
-        bind:value={question.text}
-        class="p-2"
-        placeholder="Masukkan pertanyaan"
-        type="text"
-        rows="3" />
+    <div class="flex w-full p-5 question-selection-type-inputs" style="height: 100%">
+      <div class="mr-2">{index + 1}.</div>
+      <div class="flex flex-col flex-1" style="height: 100%">
+        <!-- QUESTION TEXT -->
+        <textarea
+          bind:this={fieldQuestionText}
+          bind:value={question.text}
+          class="p-2"
+          placeholder="Masukkan pertanyaan"
+          type="text"
+          rows="3" />
 
-      <div
-        bind:this={optionItemsParent}
-        class="flex flex-col justify-center mt-5">
-        <!--  -->
-        {#each question.options as option, index}
-          <div class="flex items-center mb-2 setup--question-item">
-            <input class="inline-block mr-2" type="radio" disabled />
-            <input
-              bind:value={option}
-              class="flex-1 inline-block p-2"
-              style="max-width: 300px"
-              type="text" />
-            <button
-              class="ml-2 delete-question-button"
-              on:click={() => removeOption(index)}
-              title="Hapus opsi">
-              <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
-            </button>
-          </div>
-        {/each}
+        <div bind:this={optionItemsParent} class="flex flex-col justify-center mt-5">
+          <!--  -->
+          {#each question.options as option, index}
+            <div class="flex items-center mb-2 setup--question-item">
+              <input class="inline-block mr-2" type="radio" disabled />
+              <input bind:value={option} class="flex-1 inline-block p-2" style="max-width: 300px" type="text" />
+              <button class="ml-2 delete-question-button" on:click={() => removeOption(index)} title="Hapus opsi">
+                <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
+              </button>
+            </div>
+          {/each}
 
-        {#if question.hasOtherOption}
-          <SetupOtherOption
-            on:delete={() => (question.hasOtherOption = false)} />
-        {/if}
+          {#if question.hasOtherOption}
+            <SetupOtherOption on:delete={() => (question.hasOtherOption = false)} />
+          {/if}
+        </div>
       </div>
     </div>
 
@@ -149,9 +132,7 @@
         Tambahkan Opsi
       </button>
       {#if !question.hasOtherOption}
-        <button
-          class="flex items-center px-3 py-2"
-          on:click={() => (question.hasOtherOption = true)}>
+        <button class="flex items-center px-3 py-2" on:click={() => (question.hasOtherOption = true)}>
           Tambahkan opsi "Lainnya"
         </button>
       {/if}
