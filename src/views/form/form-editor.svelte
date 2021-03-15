@@ -16,7 +16,7 @@
   };
 
   const question = {
-    text: 'Pertaanyaan',
+    text: 'Pertanyaan',
     required: false,
   };
 
