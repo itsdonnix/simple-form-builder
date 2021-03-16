@@ -8,6 +8,10 @@
   import Tabs from '../../components/Tabs.svelte';
   import Selection from '../../components/setup-question-types/Selection.svelte';
   import Text from '../../components/setup-question-types/Text.svelte';
+  import * as store from '../../store.js';
+
+  export let params;
+  export let id;
 
   const defaultForm = {
     title: 'Formulir tanpa judul',
@@ -33,6 +37,11 @@
   };
 
   let form = { ...defaultForm };
+
+  if (params && params.id) {
+    id = params.id;
+    form.id = id;
+  }
 
   // DOM Bindings
   let questionPanel;
@@ -68,9 +77,16 @@
   }
 
   onMount(() => {
+    if (!store.isFormExist(form.id)) {
+      store.addForm(form);
+    } else {
+      form = store.getForm(id);
+    }
     document.body.classList.add('bg-color-2');
     return () => document.body.classList.remove('bg-color-2');
   });
+
+  $: form && id && store.updateForm(id, form);
 </script>
 
 <div class="p-2 bg-white form-actions">
