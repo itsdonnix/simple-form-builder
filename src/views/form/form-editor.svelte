@@ -17,6 +17,8 @@
     title: 'Formulir tanpa judul',
     description: 'Deskripsi formulir',
     questions: [],
+    //
+    preview: false,
   };
 
   const question = {
@@ -109,9 +111,9 @@
 
           {#each form.questions as question, index}
             {#if question.type === 'selection'}
-              <Selection bind:question {index} on:delete={deleteQuestion} />
+              <Selection bind:preview={question.preview} bind:question {index} on:delete={deleteQuestion} />
             {:else if question.type === 'essay'}
-              <Text bind:question {index} on:delete={deleteQuestion} />
+              <Text bind:preview={question.preview} bind:question {index} on:delete={deleteQuestion} />
             {/if}
           {/each}
           <div class="p-5">

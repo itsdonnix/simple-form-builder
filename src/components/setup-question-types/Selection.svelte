@@ -10,7 +10,7 @@
   export let question;
   export let index = 0;
 
-  let preview = false;
+  export let preview = false;
 
   if (!question.options.length) {
     question.options = ['Pilihan 1', 'Pilihan 2'];

@@ -9,7 +9,7 @@
   export let question;
   export let index = 0;
 
-  let preview = false;
+  export let preview = false;
 
   // DOM Bindings
   let self;
