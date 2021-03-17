@@ -14,6 +14,8 @@
   export let params;
   export let id;
 
+  let mounted = false;
+
   const defaultForm = {
     title: 'Formulir tanpa judul',
     description: 'Deskripsi formulir',
@@ -86,10 +88,11 @@
       form = store.getForm(id);
     }
     document.body.classList.add('bg-color-2');
+    mounted = true;
     return () => document.body.classList.remove('bg-color-2');
   });
 
-  $: form && id && store.updateForm(id, form);
+  $: mounted && form && !!id && store.updateForm(id, form);
 </script>
 
 <FormSetupHeader />
