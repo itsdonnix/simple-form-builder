@@ -9,6 +9,7 @@
   import Selection from '../../components/setup-question-types/Selection.svelte';
   import Text from '../../components/setup-question-types/Text.svelte';
   import * as store from '../../store.js';
+  import FormSetupHeader from '../../components/formSetupHeader.svelte';
 
   export let params;
   export let id;
@@ -91,11 +92,7 @@
   $: form && id && store.updateForm(id, form);
 </script>
 
-<div class="p-2 bg-white form-actions">
-  <div class="flex margin-page">
-    <button class="px-4 py-2 ml-auto font-bold btn btn--primary"> Kirim </button>
-  </div>
-</div>
+<FormSetupHeader />
 
 <div class="flex flex-col items-center">
   <div class="w-full mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
