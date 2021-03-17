@@ -106,7 +106,7 @@
       </TabList>
 
       <TabPanel>
-        <div class="p-5 " tabindex="0" bind:this={questionPanel}>
+        <div class="p-5 form-setup-panel" tabindex="0" bind:this={questionPanel}>
           <FormMeta bind:title={form.title} bind:description={form.description} />
 
           {#each form.questions as question, index}

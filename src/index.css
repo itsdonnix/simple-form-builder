@@ -99,7 +99,7 @@ input[type='checkbox'] {
   display: initial;
 }
 
-.question-selection-type.preview:hover {
+.form-setup-panel .question-selection-type.preview:hover {
   @apply bg-gray-200;
 }
 
