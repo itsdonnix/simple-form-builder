@@ -1,6 +1,7 @@
 <script>
   export let number;
   export let question;
+  export let answer = '';
   export let disabled = true;
 </script>
 
@@ -19,14 +20,16 @@
         {disabled}
         placeholder="Masukkan jawaban Anda"
         rows="3"
-        required={question.required} />
+        required={question.required}
+        bind:value={answer} />
     {:else}
       <input
         class="p-2 mt-2 border border-gray-400"
         {disabled}
         placeholder="Masukkan jawaban Anda"
         type="text"
-        required={question.required} />
+        required={question.required}
+        bind:value={answer} />
     {/if}
   </div>
 </div>
