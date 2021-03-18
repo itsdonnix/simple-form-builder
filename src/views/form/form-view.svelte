@@ -6,11 +6,14 @@
 
   export let params;
   export let id;
+  let loading = false;
 
   let form;
+
   let answer = {
     nama: '',
     phoneNumber: '',
+    answers: [],
   };
 
   if (params && params.id) {
@@ -19,7 +22,13 @@
     document.title = form.title;
   }
 
-  function submit() {}
+  function submit() {
+    loading = true;
+    setTimeout(() => {
+      loading = false;
+    }, 5000);
+    console.log(answer.answers);
+  }
 
   onMount(() => {
     document.body.classList.add('bg-color-2');
@@ -62,15 +71,17 @@
     <div>
       {#each form.questions as question, index}
         {#if question.type === 'selection'}
-          <SelectionView disabled={false} {question} number={index + 1} />
+          <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
         {:else if question.type === 'essay'}
-          <TextView disabled={false} {question} number={index + 1} />
+          <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
         {/if}
       {/each}
     </div>
 
     <div class="flex p-3">
-      <button class="px-4 py-2 ml-auto font-bold btn btn--primary">Kirim</button>
+      <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
+        {loading ? 'Mengirim jawaban...' : 'Kirim'}
+      </button>
     </div>
   </div>
 </form>

@@ -2,7 +2,9 @@ import { writable } from 'svelte/store';
 import LocalStorage from './storage';
 
 export let forms = writable([]);
+export let answers = writable([]);
 export let formsLocalStorage = new LocalStorage('forms');
+export let answersLocalStorage = new LocalStorage('answers');
 
 forms.update(() => formsLocalStorage.getData() || []);
 
@@ -31,4 +33,15 @@ export function updateForm(id, form) {
     _forms[targetIndex] = form;
     return _forms;
   });
+}
+
+export function addAnswer(newAnswer) {
+  forms.update((_answer) => [..._answer, newAnswer]);
+}
+
+export function getAnswersByFormId(id) {
+  let theAnswers;
+  const unsubsribe = answers.subscribe((_answer) => (theAnswers = _answer.filter((_answer) => _answer.id === id)));
+  unsubsribe();
+  return theAnswers;
 }

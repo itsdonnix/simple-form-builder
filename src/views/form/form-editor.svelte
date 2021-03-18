@@ -95,7 +95,7 @@
   $: mounted && form && !!id && store.updateForm(id, form);
 </script>
 
-<FormSetupHeader />
+<FormSetupHeader id={form.id} />
 
 <div class="flex flex-col items-center">
   <div class="w-full mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
