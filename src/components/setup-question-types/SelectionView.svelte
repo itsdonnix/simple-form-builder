@@ -43,6 +43,7 @@
             type="radio"
             bind:group={answer}
             value={otherOptionValue}
+            name={'option--' + number}
             {disabled}
             required={question.required} />
           <input
