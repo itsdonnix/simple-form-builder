@@ -7,6 +7,10 @@ const routes = {
     asyncComponent: () => import('./views/index.svelte'),
   }),
 
+  '/form/:id': wrap({
+    asyncComponent: () => import('./views/form/form-view.svelte'),
+  }),
+
   '/form/editor/new/': wrap({
     asyncComponent: () => null,
     conditions: [
