@@ -3,11 +3,20 @@
   export let number;
   export let disabled = true;
   export let answer = null;
-
   let otherOptionValue = '';
 
-  $: if (question.hasOtherOption && null !== answer && !question.options.includes(answer)) {
-    answer = otherOptionValue;
+  if (question.multiple) {
+    answer = [];
+  }
+
+  $: if (!disabled && question.hasOtherOption && !question.options.includes(answer)) {
+    if (question.multiple) {
+      if (!answer.includes(otherOptionValue) && !!otherOptionValue) {
+        answer = [...answer, otherOptionValue];
+      }
+    } else {
+      answer = otherOptionValue;
+    }
   }
 </script>
 
@@ -22,35 +31,57 @@
     </p>
     <div class="flex flex-col mt-2">
       {#each question.options as option, index}
+        <!-- svelte-ignore a11y-label-has-associated-control -->
         <label class="flex items-center mb-2">
-          <input
-            class="inline-block mr-2"
-            type="radio"
-            name={'option--' + number}
-            {disabled}
-            bind:group={answer}
-            value={option}
-            required={question.required} />
+          {#if question.multiple}
+            <input
+              class="inline-block mr-2"
+              type="checkbox"
+              name={'option--' + number}
+              {disabled}
+              bind:group={answer}
+              value={option} />
+          {:else}
+            <input
+              class="inline-block mr-2"
+              type="radio"
+              name={'option--' + number}
+              {disabled}
+              bind:group={answer}
+              value={option}
+              required={question.required} />
+          {/if}
           <div>{option}</div>
         </label>
       {/each}
       {#if question.hasOtherOption}
         <label class="flex items-center mb-2">
-          <input
-            class="inline-block mr-2"
-            type="radio"
-            bind:group={answer}
-            value={otherOptionValue}
-            name={'option--' + number}
-            {disabled}
-            required={question.required} />
+          {#if question.multiple}
+            <input
+              class="inline-block mr-2"
+              type="checkbox"
+              bind:group={answer}
+              value={otherOptionValue}
+              name={'option--' + number}
+              {disabled}
+              required={answer.length === 0} />
+          {:else}
+            <input
+              class="inline-block mr-2"
+              type="radio"
+              bind:group={answer}
+              value={otherOptionValue}
+              name={'option--' + number}
+              {disabled}
+              required={question.required} />
+          {/if}
           <input
             class="flex-1 p-2 border border-gray-400 "
             {disabled}
             placeholder="Lainnya"
             style="max-width: 300px"
             bind:value={otherOptionValue}
-            required={!question.options.includes(answer)}
+            required={question.multiple ? answer.includes(otherOptionValue) : !question.options.includes(answer)}
             type="text" />
         </label>
       {/if}

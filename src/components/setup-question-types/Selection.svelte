@@ -87,7 +87,11 @@
           <!--  -->
           {#each question.options as option, index}
             <div class="flex items-center mb-2 setup--question-item">
-              <input class="inline-block mr-2" type="radio" disabled />
+              {#if question.multiple}
+                <input class="inline-block mr-2" type="checkbox" disabled />
+              {:else}
+                <input class="inline-block mr-2" type="radio" disabled />
+              {/if}
               <input bind:value={option} class="flex-1 inline-block p-2" style="max-width: 300px" type="text" />
               <button class="ml-2 delete-question-button" on:click={() => removeOption(index)} title="Hapus opsi">
                 <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
@@ -96,7 +100,7 @@
           {/each}
 
           {#if question.hasOtherOption}
-            <SetupOtherOption on:delete={() => (question.hasOtherOption = false)} />
+            <SetupOtherOption multiple={question.multiple} on:delete={() => (question.hasOtherOption = false)} />
           {/if}
         </div>
       </div>
