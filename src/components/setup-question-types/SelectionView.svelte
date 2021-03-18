@@ -6,9 +6,7 @@
 
   let otherOptionValue = '';
 
-  const isSelecOtherOption = () => !question.options.includes(answer);
-
-  $: if (question.hasOtherOption && null !== answer && isSelecOtherOption()) {
+  $: if (question.hasOtherOption && null !== answer && !question.options.includes(answer)) {
     answer = otherOptionValue;
   }
 </script>
@@ -52,6 +50,7 @@
             placeholder="Lainnya"
             style="max-width: 300px"
             bind:value={otherOptionValue}
+            required={!question.options.includes(answer)}
             type="text" />
         </label>
       {/if}
