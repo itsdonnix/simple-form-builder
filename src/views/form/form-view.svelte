@@ -2,7 +2,9 @@
   import { onMount } from 'svelte';
   import * as store from '../../store.js';
   import TextView from '../../components/setup-question-types/TextView.svelte';
+  import Icon from '../../components/Icon.svelte';
   import SelectionView from '../../components/setup-question-types/SelectionView.svelte';
+  import { mdiCheck } from '@mdi/js';
 
   export let params;
   export let id;
@@ -11,10 +13,12 @@
   let form;
 
   let answer = {
-    nama: '',
+    name: '',
     phoneNumber: '',
     answers: [],
   };
+
+  let formSent = false;
 
   if (params && params.id) {
     id = params.id;
@@ -22,12 +26,21 @@
     document.title = form.title;
   }
 
+  let confirmMessage =
+    'Jawaban Anda akan dikirim, pastikan jawaban-jawaban Anda telah sesuai sebelum mengirimkan jawaban.\nLanjutkan mengirimkan jawaban?';
+
   function submit() {
-    loading = true;
-    setTimeout(() => {
-      loading = false;
-    }, 5000);
     console.log(answer.answers);
+    if (confirm(confirmMessage)) {
+      loading = true;
+      setTimeout(() => {
+        if (store.isAnswerExist(answer.id, answer.phoneNumber)) {
+          store.addAnswer(answer);
+        }
+        formSent = true;
+        loading = false;
+      }, 5000);
+    }
   }
 
   onMount(() => {
@@ -38,50 +51,63 @@
   });
 </script>
 
-<form on:submit|preventDefault={submit} class="flex flex-col items-center">
-  <div class="w-full p-1 mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
-    <div class="p-5 form-meta-preview">
-      <h2 class="text-2xl">{form.title}</h2>
-      <p class="mt-2">{form.description}</p>
+{#if !formSent}
+  <form on:submit|preventDefault={submit} class="flex flex-col items-center">
+    <div class="w-full p-1 mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
+      <div class="p-5 form-meta-preview">
+        <h2 class="text-2xl">{form.title}</h2>
+        <p class="mt-2">{form.description}</p>
+      </div>
+
+      <div class="flex flex-col p-5">
+        <label class="text-sm" for="name">Nama <span class="text-red-600">*</span></label>
+        <input
+          name="name"
+          class="p-2 mt-1 border border-gray-400"
+          placeholder="Masukkan nama Anda"
+          bind:value={answer.name}
+          type="text"
+          required />
+      </div>
+
+      <div class="flex flex-col p-5">
+        <label class="text-sm" for="name">Nomor HP <span class="text-red-600">*</span></label>
+        <input
+          name="phone-number"
+          class="p-2 mt-1 border border-gray-400"
+          placeholder="Masukkan nomor HP Anda"
+          bind:value={answer.phoneNumber}
+          type="tel"
+          required />
+      </div>
+
+      <hr class="my-5" />
+
+      <!-- QUESTION -->
+      <div>
+        {#each form.questions as question, index}
+          {#if question.type === 'selection'}
+            <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
+          {:else if question.type === 'essay'}
+            <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
+          {/if}
+        {/each}
+      </div>
+
+      <div class="flex p-3">
+        <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
+          {loading ? 'Mengirim jawaban...' : 'Kirim'}
+        </button>
+      </div>
     </div>
-
-    <div class="flex flex-col p-5">
-      <label class="text-sm" for="name">Nama <span class="text-red-600">*</span></label>
-      <input
-        name="name"
-        class="p-2 mt-1 border border-gray-400"
-        placeholder="Masukkan nama Anda"
-        type="text"
-        required />
-    </div>
-
-    <div class="flex flex-col p-5">
-      <label class="text-sm" for="name">Nomor HP <span class="text-red-600">*</span></label>
-      <input
-        name="phone-number"
-        class="p-2 mt-1 border border-gray-400"
-        placeholder="Masukkan nomor HP Anda"
-        type="tel"
-        required />
-    </div>
-
-    <hr class="my-5" />
-
-    <!-- QUESTION -->
-    <div>
-      {#each form.questions as question, index}
-        {#if question.type === 'selection'}
-          <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-        {:else if question.type === 'essay'}
-          <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-        {/if}
-      {/each}
-    </div>
-
-    <div class="flex p-3">
-      <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
-        {loading ? 'Mengirim jawaban...' : 'Kirim'}
-      </button>
+  </form>
+{:else}
+  <div class="flex flex-col items-center justify-center">
+    <div
+      class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
+      style="max-width: 700px; min-height: 200px">
+      <Icon path={mdiCheck} width="50px" height="50px" />
+      <h1 class="text-xl">Formulir berhasil dikirim!</h1>
     </div>
   </div>
-</form>
+{/if}

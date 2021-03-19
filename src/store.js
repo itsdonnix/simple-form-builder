@@ -7,9 +7,14 @@ export let formsLocalStorage = new LocalStorage('forms');
 export let answersLocalStorage = new LocalStorage('answers');
 
 forms.update(() => formsLocalStorage.getData() || []);
+answers.update(() => answersLocalStorage.getData() || []);
 
 forms.subscribe((_forms) => {
   formsLocalStorage.setData(_forms);
+});
+
+answers.subscribe((_answers) => {
+  answersLocalStorage.setData(_answers);
 });
 
 export function addForm(newForm) {
@@ -36,12 +41,18 @@ export function updateForm(id, form) {
 }
 
 export function addAnswer(newAnswer) {
-  forms.update((_answer) => [..._answer, newAnswer]);
+  answers.update((_answer) => [..._answer, newAnswer]);
 }
 
-export function getAnswersByFormId(id) {
+export function getAnswersByFormIdAndPhoneNumber(id, phoneNumber) {
   let theAnswers;
-  const unsubsribe = answers.subscribe((_answer) => (theAnswers = _answer.filter((_answer) => _answer.id === id)));
+  const unsubsribe = answers.subscribe(
+    (_answer) => (theAnswers = _answer.filter((_answer) => _answer.id === id && _answer.phoneNumber === phoneNumber))
+  );
   unsubsribe();
   return theAnswers;
+}
+
+export function isAnswerExist(id, phoneNumber) {
+  return !!(getAnswersByFormIdAndPhoneNumber(id, phoneNumber) || []).length;
 }
