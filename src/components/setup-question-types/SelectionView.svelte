@@ -1,4 +1,6 @@
 <script>
+  import { answers } from '../../store';
+
   export let question;
   export let number;
   export let disabled = true;
@@ -9,13 +11,16 @@
     answer = [];
   }
 
-  $: if (!disabled && question.hasOtherOption && !question.options.includes(answer)) {
-    if (question.multiple) {
-      if (!answer.includes(otherOptionValue) && !!otherOptionValue) {
-        answer = [...answer, otherOptionValue];
+  function onInput({ target }) {
+    otherOptionValue = target.value;
+    if (!disabled && question.hasOtherOption && !question.options.includes(answer)) {
+      if (question.multiple) {
+        if (!answer.includes(otherOptionValue) && !!otherOptionValue) {
+          answer[question.options.length] = otherOptionValue;
+        }
+      } else {
+        answer = otherOptionValue;
       }
-    } else {
-      answer = otherOptionValue;
     }
   }
 </script>
@@ -78,9 +83,9 @@
           <input
             class="flex-1 p-2 border border-gray-400 "
             {disabled}
+            on:input={onInput}
             placeholder="Lainnya"
             style="max-width: 300px"
-            bind:value={otherOptionValue}
             required={question.multiple ? answer.includes(otherOptionValue) : !question.options.includes(answer)}
             type="text" />
         </label>
