@@ -9,6 +9,7 @@
   import Selection from '../../components/setup-question-types/Selection.svelte';
   import Text from '../../components/setup-question-types/Text.svelte';
   import * as store from '../../store.js';
+  import { answers } from '../../store.js';
   import FormSetupHeader from '../../components/formSetupHeader.svelte';
 
   export let params;
@@ -123,8 +124,31 @@
       </TabPanel>
 
       <TabPanel>
-        <div class="min-h-screen p-5" tabindex="0">
-          <h2>Hasil</h2>
+        <div class="p-5" tabindex="0">
+          <h2 class="text-xl">
+            Hasil Jawaban Responden ({$answers.filter((answer) => answer.id === id).length} responden)
+          </h2>
+          <hr class="my-2" />
+          <div class="flex flex-col">
+            {#each $answers.filter((answer) => answer.id === id) as answer}
+              <details class="mb-3 ml-1">
+                <summary class="py-1 text-lg">{answer.name} ({answer.phoneNumber})</summary>
+                {#each answer.answers as _answer, index}
+                  <div class="flex p-1 font-bold">
+                    <div class="mr-1">
+                      {index + 1}.
+                    </div>
+                    <div class="whitespace-pre">
+                      {form.questions[index].text}
+                    </div>
+                  </div>
+                  <div class="p-1 ml-4 whitespace-pre">
+                    {form.questions[index].multiple ? _answer.filter((_answer_) => !!_answer_).join(', ') : _answer}
+                  </div>
+                {/each}
+              </details>
+            {/each}
+          </div>
         </div>
       </TabPanel>
     </Tabs>
