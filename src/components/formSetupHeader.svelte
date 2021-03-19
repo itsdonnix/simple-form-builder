@@ -5,7 +5,7 @@
   export let id = '';
   let loading = false;
 
-  $: formURL = location.host + '/#/form/' + id;
+  $: formURL = 'https://' + location.host + '/#/form/' + id;
 
   function copyToClipboard() {
     navigator.clipboard.writeText(formURL);
