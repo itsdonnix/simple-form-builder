@@ -5,24 +5,27 @@
   import Icon from '../../components/Icon.svelte';
   import SelectionView from '../../components/setup-question-types/SelectionView.svelte';
   import { mdiCheck } from '@mdi/js';
+  import { getSessionId } from '../../session.js';
 
   export let params;
   export let id;
-  let loading = false;
 
+  let loading = false;
+  let sessionId = getSessionId();
   let form;
+  let formSent = false;
 
   let answer = {
+    sessionId,
     name: '',
     phoneNumber: '',
     answers: [],
   };
 
-  let formSent = false;
-
   if (params && params.id) {
     id = params.id;
     form = store.getForm(id);
+    answer.id = id;
     document.title = form.title;
   }
 
@@ -30,13 +33,10 @@
     'Jawaban Anda akan dikirim, pastikan jawaban-jawaban Anda telah sesuai sebelum mengirimkan jawaban.\nLanjutkan mengirimkan jawaban?';
 
   function submit() {
-    console.log(answer.answers);
     if (confirm(confirmMessage)) {
       loading = true;
       setTimeout(() => {
-        if (store.isAnswerExist(answer.id, answer.phoneNumber)) {
-          store.addAnswer(answer);
-        }
+        store.addAnswer(answer);
         formSent = true;
         loading = false;
       }, 5000);
@@ -44,6 +44,10 @@
   }
 
   onMount(() => {
+    const answer = store.getAnswerByFormIdAndSessionId(id, sessionId);
+    if (!!answer) {
+      formSent = true;
+    }
     document.body.classList.add('bg-color-2');
     return () => {
       document.body.classList.remove('bg-color-2');

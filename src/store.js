@@ -53,6 +53,15 @@ export function getAnswersByFormIdAndPhoneNumber(id, phoneNumber) {
   return theAnswers;
 }
 
+export function getAnswerByFormIdAndSessionId(formId, sessionId) {
+  let theAnswers;
+  const unsubsribe = answers.subscribe(
+    (_answer) => (theAnswers = _answer.filter((_answers) => _answers.id === formId && _answers.sessionId === sessionId))
+  );
+  unsubsribe();
+  return theAnswers.length ? theAnswers[0] : null;
+}
+
 export function isAnswerExist(id, phoneNumber) {
   return !!(getAnswersByFormIdAndPhoneNumber(id, phoneNumber) || []).length;
 }
