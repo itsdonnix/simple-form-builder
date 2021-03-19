@@ -61,9 +61,12 @@ body.bg-color-2 {
   background-color: var(--main-bg-hover-color);
 }
 
-.new-form-card--wrapper {
+.form-card {
+  position: relative;
   max-width: 200px;
+  min-width: 200px;
 }
+
 
 .new-form-card {
   min-height: 100px;
