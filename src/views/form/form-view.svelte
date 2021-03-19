@@ -111,7 +111,7 @@
       class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
       style="max-width: 700px; min-height: 200px">
       <Icon path={mdiCheck} width="50px" height="50px" />
-      <h1 class="text-xl">Formulir berhasil dikirim!</h1>
+      <h1 class="text-xl">Formulir Anda berhasil dikirim!</h1>
     </div>
   </div>
 {/if}
