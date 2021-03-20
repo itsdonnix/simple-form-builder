@@ -5,9 +5,8 @@
   "author": "Don Alfons Nisnoni",
   "scripts": {
     "dev": "vite",
-    "compile": "vite build",
+    "build": "vite build",
     "check": "svelte-check --human",
-    "build": "run-s check compile",
     "serve": "sirv dist"
   },
   "devDependencies": {
