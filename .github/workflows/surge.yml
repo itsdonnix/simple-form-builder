@@ -1,0 +1,36 @@
+name: Deploy to Surge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "15.7.0"
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Svelte Check
+        run: yarn run check
+
+      - name: Build
+        run: yarn run build
+
+      - name: Deploy
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'https://donnisnoni-form-builder.surge.sh'
+          project: './dist'
+          login: ${{ secrets.surge_login }}
+          token: ${{ secrets.surge_token }}
