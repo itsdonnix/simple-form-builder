@@ -5,7 +5,7 @@
   "author": "Don Alfons Nisnoni",
   "scripts": {
     "dev": "vite",
-    "compile": "cross-env NODE_ENV=production vite build",
+    "compile": "vite build",
     "check": "svelte-check --human",
     "build": "run-s check compile",
     "serve": "sirv dist"
