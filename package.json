@@ -4,10 +4,7 @@
   "scripts": {
     "dev": "vite",
     "compile": "cross-env NODE_ENV=production vite build",
-    "check": "svelte-check --human && tsc --noEmit",
-    "watch:svelte": "svelte-check --human --watch",
-    "watch:ts": "tsc --noEmit --watch",
-    "start": "run-p watch:* dev",
+    "check": "svelte-check --human",
     "build": "run-s check compile",
     "serve": "sirv dist"
   },
