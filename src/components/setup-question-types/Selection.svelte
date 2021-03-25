@@ -1,6 +1,6 @@
 <script>
   import { mdiPlus, mdiTrashCanOutline } from '@mdi/js';
-  import { createEventDispatcher, onMount, tick } from 'svelte';
+  import { createEventDispatcher, tick } from 'svelte';
   import Icon from '../Icon.svelte';
   import SetupOtherOption from '../SetupOtherOption.svelte';
   import SelectionView from './SelectionView.svelte';

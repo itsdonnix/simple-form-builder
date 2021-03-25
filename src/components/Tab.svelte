@@ -28,6 +28,6 @@
     color: #000;
     font-weight: bold;
     background-color: #fff;
-    positions: relative;
+    position: relative;
   }
 </style>

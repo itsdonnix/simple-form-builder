@@ -1,5 +1,5 @@
 <script>
-  import { mdiDeleteOutline, mdiPlusCircle, mdiTrashCanOutline } from '@mdi/js';
+  import { mdiPlusCircle } from '@mdi/js';
   import Icon from '../components/Icon.svelte';
   import { link } from 'svelte-spa-router';
   import { forms } from '../store.js';

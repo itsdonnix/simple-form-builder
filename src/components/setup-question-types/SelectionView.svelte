@@ -1,6 +1,4 @@
 <script>
-  import { answers } from '../../store';
-
   export let question;
   export let number;
   export let disabled = true;
@@ -35,7 +33,7 @@
       {/if}
     </p>
     <div class="flex flex-col mt-2">
-      {#each question.options as option, index}
+      {#each question.options as option}
         <!-- svelte-ignore a11y-label-has-associated-control -->
         <label class="flex items-center mb-2">
           {#if question.multiple}
