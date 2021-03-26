@@ -5,7 +5,7 @@
 
 {#if $location.startsWith('/form/editor') || $location === '/'}
   <header class="text-white main-header margin-page">
-    <a class="app-name" href="/" use:link>Formulir</a>
+    <a class="app-name" href="/" use:link>Simple Form Builder</a>
   </header>
 {/if}
 
