@@ -30,7 +30,7 @@
   }
 
   let confirmMessage =
-    'Jawaban Anda akan dikirim, pastikan jawaban-jawaban Anda telah sesuai sebelum mengirimkan jawaban.\nLanjutkan mengirimkan jawaban?';
+    'Your answers will be sent, please make sure your answers are correct before submitting the answers. \n Continue sending your answers?';
 
   function submit() {
     if (confirm(confirmMessage)) {
@@ -64,22 +64,22 @@
       </div>
 
       <div class="flex flex-col p-5">
-        <label class="text-sm" for="name">Nama <span class="text-red-600">*</span></label>
+        <label class="text-sm" for="name">Name <span class="text-red-600">*</span></label>
         <input
           name="name"
           class="p-2 mt-1 border border-gray-400"
-          placeholder="Masukkan nama Anda"
+          placeholder="Input your name"
           bind:value={answer.name}
           type="text"
           required />
       </div>
 
       <div class="flex flex-col p-5">
-        <label class="text-sm" for="name">Nomor HP <span class="text-red-600">*</span></label>
+        <label class="text-sm" for="name">Number Phone <span class="text-red-600">*</span></label>
         <input
           name="phone-number"
           class="p-2 mt-1 border border-gray-400"
-          placeholder="Masukkan nomor HP Anda"
+          placeholder="Input your phone number"
           bind:value={answer.phoneNumber}
           type="tel"
           required />
@@ -100,7 +100,7 @@
 
       <div class="flex p-3">
         <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
-          {loading ? 'Mengirim jawaban...' : 'Kirim'}
+          {loading ? 'Sending your answer...' : 'Send'}
         </button>
       </div>
     </div>
@@ -111,7 +111,7 @@
       class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
       style="max-width: 700px; min-height: 200px">
       <Icon path={mdiCheck} width="50px" height="50px" />
-      <h1 class="text-xl">Formulir Anda berhasil dikirim!</h1>
+      <h1 class="text-xl">Your answer is successfully sent!</h1>
     </div>
   </div>
 {/if}

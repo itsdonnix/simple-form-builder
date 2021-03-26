@@ -28,11 +28,11 @@
       class:hidden={!!!id}
       value={formURL}
       title={formURL} />
-    <button on:click={copyToClipboard} class="p-1" title="Salin alamat formulir">
+    <button on:click={copyToClipboard} class="p-1" title="Copy form link">
       <Icon path={mdiContentCopy} />
     </button>
-    <button class="px-4 py-2 ml-auto font-bold btn btn--primary" on:click={send} title="Kirim formulir">
-      {loading ? 'Mengirimkan...' : 'Kirim'}
+    <button class="px-4 py-2 ml-auto font-bold btn btn--primary" on:click={send} title="Send form">
+      {loading ? 'Sending...' : 'Send'}
     </button>
   </div>
 </div>
