@@ -62,7 +62,7 @@
     form.questions = _questions;
   }
 
-  function onSelectQuestionType({ detail: questionType }) {
+  function onCreateNewQuestionClicked({ detail: questionType }) {
     let newQuestion = { type: questionType };
     switch (questionType) {
       case 'selection':
@@ -118,7 +118,7 @@
             {/if}
           {/each}
           <div class="p-5">
-            <ButtonAddQuestion on:onSelectQuestionType={onSelectQuestionType} />
+            <ButtonAddQuestion on:onSelectQuestionType={onCreateNewQuestionClicked} />
           </div>
         </div>
       </TabPanel>
