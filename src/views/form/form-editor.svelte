@@ -94,6 +94,7 @@
   });
 
   $: mounted && form && !!id && store.updateForm(id, form);
+  $: formAnswers = $answers.filter((answer) => answer.id === id);
 </script>
 
 <FormSetupHeader id={form.id} />
@@ -126,11 +127,11 @@
       <TabPanel>
         <div class="p-5" tabindex="0">
           <h2 class="text-xl">
-            Hasil Jawaban Responden ({$answers.filter((answer) => answer.id === id).length} responden)
+            Hasil Jawaban Responden ({formAnswers.length} responden)
           </h2>
           <hr class="my-2" />
           <div class="flex flex-col">
-            {#each $answers.filter((answer) => answer.id === id) as answer}
+            {#each formAnswers as answer}
               <details class="mb-3 ml-1">
                 <summary class="py-1 text-lg">{answer.name} ({answer.phoneNumber})</summary>
                 {#each answer.answers as _answer, index}
