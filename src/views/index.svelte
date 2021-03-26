@@ -7,19 +7,19 @@
 
 <main class="margin-page">
   <div class="mt-4">
-    <h3 class="p-2 font-bold h3">Baru</h3>
+    <h3 class="p-2 font-bold h3">New</h3>
     <div class="m-3">
-      <a class="flex flex-col form-card" href="/form/editor/new" title="Buat formulir baru" use:link>
+      <a class="flex flex-col form-card" href="/form/editor/new" title="Create new form" use:link>
         <div class="flex items-center justify-center new-form-card">
           <Icon path={mdiPlusCircle} />
         </div>
-        <div class="my-2 text-center">Formulir Baru</div>
+        <div class="my-2 text-center">New form</div>
       </a>
     </div>
   </div>
 
   <div class="mt-4">
-    <h3 class="p-2 font-bold h3">Daftar Formulir</h3>
+    <h3 class="p-2 font-bold h3">Recent Forms</h3>
     <div class="flex flex-col gap-2 m-3 md:flex-row">
       {#each $forms as form}
         <a class="relative flex flex-col w-full form-card" href="/form/editor/{form.id}" title={form.title} use:link>

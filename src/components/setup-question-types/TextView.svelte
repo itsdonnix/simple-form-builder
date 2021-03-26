@@ -18,7 +18,7 @@
       <textarea
         class="p-2 mt-2 border border-gray-400"
         {disabled}
-        placeholder="Masukkan jawaban Anda"
+        placeholder="Input your answer"
         rows="3"
         required={question.required}
         bind:value={answer} />
@@ -26,7 +26,7 @@
       <input
         class="p-2 mt-2 border border-gray-400"
         {disabled}
-        placeholder="Masukkan jawaban Anda"
+        placeholder="Input your answer"
         type="text"
         required={question.required}
         bind:value={answer} />

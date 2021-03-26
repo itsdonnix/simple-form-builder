@@ -82,7 +82,7 @@
             class="flex-1 p-2 border border-gray-400 "
             {disabled}
             on:input={onInput}
-            placeholder="Lainnya"
+            placeholder="Other"
             style="max-width: 300px"
             required={question.multiple ? answer.includes(otherOptionValue) : !question.options.includes(answer)}
             type="text" />

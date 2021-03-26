@@ -18,15 +18,15 @@
   let mounted = false;
 
   const defaultForm = {
-    title: 'Formulir tanpa judul',
-    description: 'Deskripsi formulir',
+    title: 'Form without a title',
+    description: 'Form description',
     questions: [],
     //
     preview: false,
   };
 
   const question = {
-    text: 'Pertanyaan',
+    text: 'Question',
     required: false,
   };
 
@@ -103,8 +103,8 @@
   <div class="w-full mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
     <Tabs>
       <TabList>
-        <Tab>Pertanyaan</Tab>
-        <Tab>Hasil</Tab>
+        <Tab>Questions</Tab>
+        <Tab>Answers</Tab>
       </TabList>
 
       <TabPanel>
@@ -127,7 +127,7 @@
       <TabPanel>
         <div class="p-5" tabindex="0">
           <h2 class="text-xl">
-            Hasil Jawaban Responden ({formAnswers.length} responden)
+            Answers from ({formAnswers.length} respondents)
           </h2>
           <hr class="my-2" />
           <div class="flex flex-col">

@@ -56,14 +56,14 @@
           bind:this={fieldQuestionText}
           bind:value={question.text}
           class="p-2 setup--question-text"
-          placeholder="Masukkan pertanyaan"
+          placeholder="Input a question"
           type="text"
           rows="3" />
 
         {#if question.multiline}
-          <textarea class="p-2 mt-2 border border-gray-400" disabled placeholder="Masukkan jawaban Anda" rows="3" />
+          <textarea class="p-2 mt-2 border border-gray-400" disabled placeholder="Input your answer" rows="3" />
         {:else}
-          <input disabled class="p-2 mt-2 border border-gray-400" placeholder="Masukkan jawaban Anda" type="text" />
+          <input disabled class="p-2 mt-2 border border-gray-400" placeholder="Input your answer" type="text" />
         {/if}
       </div>
     </div>
@@ -72,11 +72,11 @@
     <div class="flex flex-col p-1 border-t md:flex-row">
       <label class="flex items-center px-3 py-2" tabindex="0">
         <input type="checkbox" bind:checked={question.multiline} />
-        <div class="ml-2">Jawaban panjang</div>
+        <div class="ml-2">Long answer</div>
       </label>
       <label class="flex items-center px-3 py-2" tabindex="0">
         <input type="checkbox" bind:checked={question.required} />
-        <div class="ml-2">Harus diisi</div>
+        <div class="ml-2">Required</div>
       </label>
     </div>
   {/if}

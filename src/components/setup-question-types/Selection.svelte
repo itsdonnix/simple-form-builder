@@ -13,7 +13,7 @@
   export let preview = false;
 
   if (!question.options.length) {
-    question.options = ['Pilihan 1', 'Pilihan 2'];
+    question.options = ['Option 1', 'Option 2'];
   }
 
   // DOM Bindings
@@ -64,7 +64,7 @@
     <!-- TOP BAR -->
     <div class="flex p-1 border-b">
       <div class="ml-auto">
-        <button class="flex items-center px-3 py-2" on:click={() => emit('delete', index)} title="Hapus pertanyaan">
+        <button class="flex items-center px-3 py-2" on:click={() => emit('delete', index)} title="Remove question">
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
@@ -79,7 +79,7 @@
           bind:this={fieldQuestionText}
           bind:value={question.text}
           class="p-2 setup--question-text"
-          placeholder="Masukkan pertanyaan"
+          placeholder="Input a question"
           type="text"
           rows="3" />
 
@@ -93,7 +93,7 @@
                 <input class="inline-block mr-2" type="radio" disabled />
               {/if}
               <input bind:value={option} class="flex-1 inline-block p-2" style="max-width: 300px" type="text" />
-              <button class="ml-2 delete-question-button" on:click={() => removeOption(index)} title="Hapus opsi">
+              <button class="ml-2 delete-question-button" on:click={() => removeOption(index)} title="Remove option">
                 <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
               </button>
             </div>
@@ -110,20 +110,20 @@
     <div class="flex flex-col p-1 border-t md:flex-row">
       <button class="flex items-center px-3 py-2" on:click={addOption}>
         <Icon path={mdiPlus} width="25px" height="25px" />
-        Tambahkan Opsi
+        Add new option
       </button>
       {#if !question.hasOtherOption}
         <button class="flex items-center px-3 py-2" on:click={() => (question.hasOtherOption = true)}>
-          Tambahkan opsi "Lainnya"
+          Add "other" option
         </button>
       {/if}
       <label class="flex items-center px-3 py-2" tabindex="0">
         <input type="checkbox" bind:checked={question.multiple} />
-        <div class="ml-2">Jawaban ganda</div>
+        <div class="ml-2">Multiple</div>
       </label>
       <label class="flex items-center px-3 py-2" tabindex="0">
         <input type="checkbox" bind:checked={question.required} />
-        <div class="ml-2">Harus diisi</div>
+        <div class="ml-2">Required</div>
       </label>
     </div>
   {/if}
