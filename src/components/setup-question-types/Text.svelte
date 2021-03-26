@@ -41,7 +41,7 @@
     <!-- TOP BAR -->
     <div class="flex p-1 border-b">
       <div class="ml-auto">
-        <button class="flex items-center px-3 py-2" on:click={() => emit('delete', index)} title="Hapus pertanyaan">
+        <button class="flex items-center px-3 py-2" on:click={() => emit('delete', index)} title="Remove question">
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
