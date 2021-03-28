@@ -6,12 +6,13 @@
   import SelectionView from '../../components/setup-question-types/SelectionView.svelte';
   import { mdiCheck } from '@mdi/js';
   import { generateSessionId, getSessionID } from '../../session.js';
+  import { DefaultForm } from '../../shared.js';
 
   export let params;
   export let id;
 
   let loading = false;
-  let form = { title: '', questions: [] };
+  let form = { ...DefaultForm };
   let formSent = false;
 
   let answer = {

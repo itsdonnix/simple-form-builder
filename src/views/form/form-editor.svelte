@@ -11,19 +11,12 @@
   import * as store from '../../store.js';
   import { answers } from '../../store.js';
   import FormSetupHeader from '../../components/formSetupHeader.svelte';
+  import { DefaultForm } from '../../shared';
 
   export let params;
   export let id;
 
   let mounted = false;
-
-  const defaultForm = {
-    title: 'Form without a title',
-    description: 'Form description',
-    questions: [],
-    //
-    preview: false,
-  };
 
   const question = {
     text: 'Question',
@@ -42,7 +35,7 @@
     multiple: false,
   };
 
-  let form = { ...defaultForm };
+  let form = { ...DefaultForm };
 
   if (params && params.id) {
     id = params.id;
