@@ -5,7 +5,7 @@
   export let id = '';
   let loading = false;
 
-  $: formURL = 'https://' + location.host + '/#/form/' + id;
+  $: formURL = (import.meta.env.MODE === 'development' ? location.host : import.meta.env.BASE_URL) + '/#/form/' + id;
 
   function copyToClipboard() {
     navigator.clipboard.writeText(formURL);
