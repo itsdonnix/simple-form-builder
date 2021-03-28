@@ -43,7 +43,11 @@
 
   onMount(async () => {
     form = store.getForm(id);
-    document.title = form.title;
+    if (!!form) {
+      document.title = form.title;
+    } else {
+      document.title = 'Form not found';
+    }
     if (!answer.sessionId) {
       answer.sessionId = await generateSessionId();
     }
@@ -59,55 +63,65 @@
 </script>
 
 {#if !formSent}
-  <form on:submit|preventDefault={submit} class="flex flex-col items-center">
-    <div class="w-full p-1 mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
-      <div class="p-5 form-meta-preview">
-        <h2 class="text-2xl">{form.title}</h2>
-        <p class="mt-2">{form.description}</p>
-      </div>
-
-      <div class="flex flex-col p-5">
-        <label class="text-sm" for="name">Name <span class="text-red-600">*</span></label>
-        <input
-          name="name"
-          class="p-2 mt-1 border border-gray-400"
-          placeholder="Input your name"
-          bind:value={answer.name}
-          type="text"
-          required />
-      </div>
-
-      <div class="flex flex-col p-5">
-        <label class="text-sm" for="name">Number Phone <span class="text-red-600">*</span></label>
-        <input
-          name="phone-number"
-          class="p-2 mt-1 border border-gray-400"
-          placeholder="Input your phone number"
-          bind:value={answer.phoneNumber}
-          type="tel"
-          required />
-      </div>
-
-      <hr class="my-5" />
-
-      <!-- QUESTION -->
-      <div>
-        {#each form.questions as question, index}
-          {#if question.type === 'selection'}
-            <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-          {:else if question.type === 'essay'}
-            <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-          {/if}
-        {/each}
-      </div>
-
-      <div class="flex p-3">
-        <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
-          {loading ? 'Sending your answer...' : 'Send'}
-        </button>
+  {#if !form}
+    <div class="flex flex-col items-center justify-center">
+      <div
+        class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
+        style="max-width: 700px; min-height: 200px">
+        <h1 class="text-xl">It looks like the form you are looking for does not exist...</h1>
       </div>
     </div>
-  </form>
+  {:else}
+    <form on:submit|preventDefault={submit} class="flex flex-col items-center">
+      <div class="w-full p-1 mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
+        <div class="p-5 form-meta-preview">
+          <h2 class="text-2xl">{form.title}</h2>
+          <p class="mt-2">{form.description}</p>
+        </div>
+
+        <div class="flex flex-col p-5">
+          <label class="text-sm" for="name">Name <span class="text-red-600">*</span></label>
+          <input
+            name="name"
+            class="p-2 mt-1 border border-gray-400"
+            placeholder="Input your name"
+            bind:value={answer.name}
+            type="text"
+            required />
+        </div>
+
+        <div class="flex flex-col p-5">
+          <label class="text-sm" for="name">Number Phone <span class="text-red-600">*</span></label>
+          <input
+            name="phone-number"
+            class="p-2 mt-1 border border-gray-400"
+            placeholder="Input your phone number"
+            bind:value={answer.phoneNumber}
+            type="tel"
+            required />
+        </div>
+
+        <hr class="my-5" />
+
+        <!-- QUESTION -->
+        <div>
+          {#each form.questions as question, index}
+            {#if question.type === 'selection'}
+              <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
+            {:else if question.type === 'essay'}
+              <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
+            {/if}
+          {/each}
+        </div>
+
+        <div class="flex p-3">
+          <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
+            {loading ? 'Sending your answer...' : 'Send'}
+          </button>
+        </div>
+      </div>
+    </form>
+  {/if}
 {:else}
   <div class="flex flex-col items-center justify-center">
     <div
