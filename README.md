@@ -1,3 +1,9 @@
-# form-builder
+# simple-form-builder
 
-Simple Form Builder (Front-end only)
+## What is this?
+
+This is just a simple form builder inspired by [Microsoft Forms](https://forms.office.com/). I made this for technical test on a company, so this intended just test of my skills. I made this with [Svelte](https://svelte.dev/) and [TailwindCSS](https://tailwindcss.com/).
+
+## License
+
+MIT License
