@@ -1,16 +1,13 @@
 import * as utils from './utils';
 
-export let sessionID = sessionStorage.getItem('randomId');
+export let sessionID = getSessionID();
 
-generateSessionIdIfNotExist();
-
-function generateSessionIdIfNotExist() {
-  (async () => {
-    !sessionID && sessionStorage.setItem('randomId', await utils.generateHash());
-  })();
+export function getSessionID() {
+  return sessionStorage.getItem('randomId');
 }
 
-export function getSessionId() {
-  generateSessionIdIfNotExist();
-  return sessionStorage.getItem('randomId');
+export async function generateSessionId() {
+  const hash = await utils.generateHash();
+  !getSessionID() && sessionStorage.setItem('randomId', hash);
+  return hash;
 }

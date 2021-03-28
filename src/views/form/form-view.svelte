@@ -5,18 +5,17 @@
   import Icon from '../../components/Icon.svelte';
   import SelectionView from '../../components/setup-question-types/SelectionView.svelte';
   import { mdiCheck } from '@mdi/js';
-  import { getSessionId } from '../../session.js';
+  import { generateSessionId, getSessionID } from '../../session.js';
 
   export let params;
   export let id;
 
   let loading = false;
-  let sessionId = getSessionId();
   let form;
   let formSent = false;
 
   let answer = {
-    sessionId,
+    sessionId: getSessionID(),
     name: '',
     phoneNumber: '',
     answers: [],
@@ -43,9 +42,12 @@
     }
   }
 
-  onMount(() => {
-    const answer = store.getAnswerByFormIdAndSessionId(id, sessionId);
-    if (!!answer) {
+  onMount(async () => {
+    if (!answer.sessionId) {
+      answer.sessionId = await generateSessionId();
+    }
+    const _answer = store.getAnswerByFormIdAndSessionId(id, answer.sessionId);
+    if (!!_answer) {
       formSent = true;
     }
     document.body.classList.add('bg-color-2');
