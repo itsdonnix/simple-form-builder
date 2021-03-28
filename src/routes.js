@@ -11,18 +11,18 @@ const routes = {
     asyncComponent: () => import('./views/form/form-view.svelte'),
   }),
 
-  '/form/editor/new/': wrap({
+  '/form/edit/new/': wrap({
     asyncComponent: () => null,
     conditions: [
       async () => {
         const hash = await utils.generateHash();
-        replace('/form/editor/' + hash);
+        replace('/form/edit/' + hash);
         return false;
       },
     ],
   }),
 
-  '/form/editor/:id': wrap({
+  '/form/edit/:id': wrap({
     asyncComponent: () => import('./views/form/form-editor.svelte'),
   }),
 };
