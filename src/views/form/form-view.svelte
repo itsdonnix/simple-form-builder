@@ -11,7 +11,7 @@
   export let id;
 
   let loading = false;
-  let form;
+  let form = { title: '', questions: [] };
   let formSent = false;
 
   let answer = {
@@ -23,9 +23,7 @@
 
   if (params && params.id) {
     id = params.id;
-    form = store.getForm(id);
     answer.id = id;
-    document.title = form.title;
   }
 
   let confirmMessage =
@@ -43,6 +41,8 @@
   }
 
   onMount(async () => {
+    form = store.getForm(id);
+    document.title = form.title;
     if (!answer.sessionId) {
       answer.sessionId = await generateSessionId();
     }
