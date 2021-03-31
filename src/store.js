@@ -40,6 +40,13 @@ export function getForm(id) {
   return getAllForms().find((_form) => _form.id === id);
 }
 
+export function removeForm(id) {
+  const formsCopy = getAllForms();
+  const index = formsCopy.findIndex((form) => form.id === id);
+  formsCopy.splice(index, 1);
+  forms.set(formsCopy);
+}
+
 export function isFormExist(id) {
   return !!getForm(id);
 }
