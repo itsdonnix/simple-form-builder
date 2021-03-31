@@ -28,7 +28,7 @@
   }
 
   function addOption() {
-    question.options = [...question.options, `Pilihan ` + (question.options.length + 1)];
+    question.options = [...question.options, `Option ` + (question.options.length + 1)];
     focusOnLastOption();
   }
 

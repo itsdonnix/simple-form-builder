@@ -17,10 +17,10 @@
   <input
     class="flex-1 inline-block p-2 border border-gray-400"
     disabled
-    placeholder="Lainnya"
+    placeholder="Others"
     style="max-width: 300px"
     type="text" />
-  <button class="ml-2 delete-question-button" on:click={() => emit('delete')} title="Hapus opsi">
+  <button class="ml-2 delete-question-button" on:click={() => emit('delete')} title="Remove option">
     <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
   </button>
 </div>
