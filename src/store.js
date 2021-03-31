@@ -6,8 +6,14 @@ export let answers = writable([]);
 export let formsLocalStorage = new LocalStorage('forms');
 export let answersLocalStorage = new LocalStorage('answers');
 
-forms.update(() => formsLocalStorage.getData() || []);
-answers.update(() => answersLocalStorage.getData() || []);
+// Load data from localStorage to store if any
+{
+  const formsFromLocalStorage = formsLocalStorage.getData();
+  if (formsFromLocalStorage) forms.set(formsFromLocalStorage);
+
+  const answersFromLocalStorage = answersLocalStorage.getData();
+  if (answersFromLocalStorage) answers.set(answersFromLocalStorage);
+}
 
 forms.subscribe((_forms) => {
   formsLocalStorage.setData(_forms);
