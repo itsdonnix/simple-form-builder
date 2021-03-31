@@ -46,6 +46,15 @@ export function updateForm(id, form) {
   });
 }
 
+export function getAllAnsers() {
+  let theAnswers;
+  const unsubsribe = answers.subscribe((_answers) => {
+    theAnswers = _answers;
+  });
+  unsubsribe();
+  return theAnswers;
+}
+
 export function addAnswer(newAnswer) {
   answers.update((_answer) => [..._answer, newAnswer]);
 }
