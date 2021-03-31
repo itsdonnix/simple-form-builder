@@ -12,6 +12,7 @@
   import { answers } from '../../store.js';
   import FormSetupHeader from '../../components/formSetupHeader.svelte';
   import { DefaultForm } from '../../shared';
+  import { replace } from 'svelte-spa-router';
 
   export let params;
   export let id;
@@ -75,6 +76,11 @@
     questionPanel.querySelector('.setup--question-text').focus();
   }
 
+  function removeForm() {
+    store.removeForm(form.id);
+    replace('/');
+  }
+
   onMount(() => {
     if (!store.isFormExist(form.id)) {
       store.addForm(form);
@@ -90,7 +96,7 @@
   $: formAnswers = $answers.filter((answer) => answer.id === id);
 </script>
 
-<FormSetupHeader id={form.id} />
+<FormSetupHeader id={form.id} on:delete-form-clicked={removeForm} />
 
 <div class="flex flex-col items-center">
   <div class="w-full mx-5 my-10 bg-white shadow-md" style="max-width: 700px">

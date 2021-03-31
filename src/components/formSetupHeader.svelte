@@ -1,6 +1,9 @@
 <script>
-  import { mdiContentCopy } from '@mdi/js';
+  import { mdiContentCopy, mdiTrashCanOutline } from '@mdi/js';
+  import { createEventDispatcher } from 'svelte';
   import Icon from './Icon.svelte';
+
+  const emit = createEventDispatcher();
 
   export let id = '';
   let loading = false;
@@ -21,6 +24,13 @@
 
 <div class="p-2 bg-white form-actions">
   <div class="flex margin-page">
+    <button
+      class="flex items-center p-1 mx-2"
+      on:click={() => confirm('Are you sure want to delete this form?') && emit('delete-form-clicked')}
+      title="Delete this form">
+      <Icon path={mdiTrashCanOutline} />
+      <span class="mx-2">Hapus formulir</span>
+    </button>
     <input
       on:click={copyToClipboard}
       class="px-4 py-2 border"
