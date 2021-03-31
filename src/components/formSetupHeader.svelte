@@ -29,7 +29,7 @@
       on:click={() => confirm('Are you sure want to delete this form?') && emit('delete-form-clicked')}
       title="Delete this form">
       <Icon path={mdiTrashCanOutline} />
-      <span class="mx-2">Hapus formulir</span>
+      <span class="mx-2">Delete Form</span>
     </button>
     <input
       on:click={copyToClipboard}
