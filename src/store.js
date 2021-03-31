@@ -31,10 +31,7 @@ export function getAllForms() {
 }
 
 export function getForm(id) {
-  let theForm;
-  const unsubsribe = forms.subscribe((_forms) => (theForm = _forms.find((_form) => _form.id === id)));
-  unsubsribe();
-  return theForm;
+  return getAllForms().find((_form) => _form.id === id);
 }
 
 export function isFormExist(id) {
