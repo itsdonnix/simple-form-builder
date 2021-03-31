@@ -21,6 +21,15 @@ export function addForm(newForm) {
   forms.update((_forms) => [..._forms, newForm]);
 }
 
+export function getAllForms() {
+  let theForms;
+  const unsubsribe = forms.subscribe((_forms) => {
+    theForms = _forms;
+  });
+  unsubsribe();
+  return theForms;
+}
+
 export function getForm(id) {
   let theForm;
   const unsubsribe = forms.subscribe((_forms) => (theForm = _forms.find((_form) => _form.id === id)));
