@@ -60,20 +60,11 @@ export function addAnswer(newAnswer) {
 }
 
 export function getAnswersByFormIdAndPhoneNumber(id, phoneNumber) {
-  let theAnswers;
-  const unsubsribe = answers.subscribe(
-    (_answer) => (theAnswers = _answer.filter((_answer) => _answer.id === id && _answer.phoneNumber === phoneNumber))
-  );
-  unsubsribe();
-  return theAnswers;
+  return getAllAnsers().filter((_answer) => _answer.id === id && _answer.phoneNumber === phoneNumber);
 }
 
 export function getAnswerByFormIdAndSessionId(formId, sessionId) {
-  let theAnswers;
-  const unsubsribe = answers.subscribe(
-    (_answer) => (theAnswers = _answer.filter((_answers) => _answers.id === formId && _answers.sessionId === sessionId))
-  );
-  unsubsribe();
+  const theAnswers = getAllAnsers().filter((_answers) => _answers.id === formId && _answers.sessionId === sessionId);
   return theAnswers.length ? theAnswers[0] : null;
 }
 
