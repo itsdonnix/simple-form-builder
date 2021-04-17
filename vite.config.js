@@ -10,8 +10,5 @@ module.exports = defineConfig(({ /* command, */ mode }) => {
         emitCss: true,
       }),
     ],
-    build: {
-      minify: isProduction,
-    },
   };
 });
