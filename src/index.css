@@ -5,9 +5,11 @@
 :root {
   /* width: 100vw; */
   /* height: 100vh; */
-  --main-font-color: #22272c;
-  --main-bg-color: #475665;
-  --card-bg-color: #e8edf2;
+  --bg-white-color: hsl(0, 0%, 100%);
+  --main-font-color: hsl(210, 13%, 15%);
+  --main-bg-color: hsl(210, 17%, 34%);
+  --main-bg-color2: hsl(0, 38%, 92%);
+  --card-bg-color: hsl(210, 28%, 93%);
   --card-hover-bg-color: hsl(210, 28%, 90%);
   --main-bg-hover-color: hsl(210, 17%, 30%);
 }
@@ -27,7 +29,7 @@ body {
 }
 
 body.bg-color-2 {
-  background-color: #f2e2e2;
+  background-color: var(--main-bg-color2);
 }
 
 *:focus {
@@ -50,11 +52,11 @@ body.bg-color-2 {
 
 .btn--primary {
   background-color: var(--main-bg-color);
-  color: #fff;
+  color: var(--bg-white-color);
 }
 
 .btn--primary .c-icon {
-  fill: #fff;
+  fill: var(--bg-white-color);
 }
 
 .btn--primary:hover {
@@ -66,7 +68,6 @@ body.bg-color-2 {
   max-width: 200px;
   min-width: 200px;
 }
-
 
 .new-form-card {
   min-height: 100px;
