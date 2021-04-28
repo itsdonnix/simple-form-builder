@@ -14,7 +14,7 @@
     "@mdi/js": "^5.9.55",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.7",
     "autoprefixer": "^10.2.5",
-    "cssnano": "^5.0.1",
+    "cssnano": "^5.0.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.13",
     "prettier": "^2.2.1",
