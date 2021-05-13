@@ -15,13 +15,9 @@ export let answersLocalStorage = new LocalStorage('answers');
   if (answersFromLocalStorage) answers.set(answersFromLocalStorage);
 }
 
-forms.subscribe((_forms) => {
-  formsLocalStorage.setData(_forms);
-});
-
-answers.subscribe((_answers) => {
-  answersLocalStorage.setData(_answers);
-});
+// Subscribe forms and answers to auto-save to local storage
+forms.subscribe((_forms) => formsLocalStorage.setData(_forms));
+answers.subscribe((_answers) => answersLocalStorage.setData(_answers));
 
 export function addForm(newForm) {
   forms.update((_forms) => [..._forms, newForm]);
