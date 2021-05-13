@@ -64,7 +64,11 @@
     <!-- TOP BAR -->
     <div class="flex p-1 border-b">
       <div class="ml-auto">
-        <button class="flex items-center px-3 py-2" on:click={() => emit('delete', index)} title="Remove question">
+        <button
+          aria-label="Remove question"
+          class="flex items-center px-3 py-2"
+          on:click={() => emit('delete', index)}
+          title="Remove question">
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
@@ -93,7 +97,11 @@
                 <input class="inline-block mr-2" type="radio" disabled />
               {/if}
               <input bind:value={option} class="flex-1 inline-block p-2" style="max-width: 300px" type="text" />
-              <button class="ml-2 delete-question-button" on:click={() => removeOption(index)} title="Remove option">
+              <button
+                aria-label="Remove option"
+                class="ml-2 delete-question-button"
+                on:click={() => removeOption(index)}
+                title="Remove option">
                 <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
               </button>
             </div>

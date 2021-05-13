@@ -12,15 +12,25 @@
   }
 </script>
 
-<button bind:this={self} class="flex items-center px-2 py-1 btn btn--primary" title="Add a new question">
+<button
+  aria-label="Add question"
+  bind:this={self}
+  class="flex items-center px-2 py-1 btn btn--primary"
+  title="Add a new question">
   <div class="p-2">
     <Icon path={mdiPlus} width="30px" height="30px" />
   </div>
   <div class="p-1">
     <div class="p-2 inner-label">Add question</div>
     <div class="hidden-buttons">
-      <button class="p-2 text-black bg-white" on:click={() => emitQuestionType('selection')}>Options</button>
-      <button class="p-2 text-black bg-white" on:click={() => emitQuestionType('essay')}>Text</button>
+      <button
+        aria-label="Add question with options type"
+        class="p-2 text-black bg-white"
+        on:click={() => emitQuestionType('selection')}>Options</button>
+      <button
+        aria-label="Add question with essay type"
+        class="p-2 text-black bg-white"
+        on:click={() => emitQuestionType('essay')}>Text</button>
       <button class="p-2 text-black bg-white">Others</button>
     </div>
   </div>

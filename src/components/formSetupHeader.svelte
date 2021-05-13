@@ -25,6 +25,7 @@
 <div class="p-2 bg-white form-actions">
   <div class="flex margin-page">
     <button
+      aria-label="Delete form"
       class="flex items-center p-1 mx-2"
       on:click={() => confirm('Are you sure want to delete this form?') && emit('delete-form-clicked')}
       title="Delete this form">
@@ -32,15 +33,20 @@
       <!-- <span class="hidden mx-2 sm:inline-block">Delete Form</span> -->
     </button>
     <input
+      aria-label="Form link"
       on:click={copyToClipboard}
       class="hidden px-4 py-2 border sm:inline-block"
       type="text"
       value={formURL}
       title={formURL} />
-    <button on:click={copyToClipboard} class="p-1 mx-2" title="Copy form link">
+    <button aria-label="Copy form link" on:click={copyToClipboard} class="p-1 mx-2" title="Copy form link">
       <Icon path={mdiContentCopy} />
     </button>
-    <button class="px-4 py-2 ml-auto font-bold btn btn--primary" on:click={send} title="Send form">
+    <button
+      aria-label="Send the form"
+      class="px-4 py-2 ml-auto font-bold btn btn--primary"
+      on:click={send}
+      title="Send form">
       {loading ? 'Sending...' : 'Send'}
     </button>
   </div>

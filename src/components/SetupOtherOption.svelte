@@ -20,7 +20,11 @@
     placeholder="Others"
     style="max-width: 300px"
     type="text" />
-  <button class="ml-2 delete-question-button" on:click={() => emit('delete')} title="Remove option">
+  <button
+    aria-label="Remove option"
+    class="ml-2 delete-question-button"
+    on:click={() => emit('delete')}
+    title="Remove option">
     <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
   </button>
 </div>

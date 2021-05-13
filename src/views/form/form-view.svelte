@@ -115,7 +115,7 @@
         </div>
 
         <div class="flex p-3">
-          <button type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
+          <button aria-label="Send answer" type="submit" class="px-4 py-2 ml-auto font-bold btn btn--primary">
             {loading ? 'Sending your answer...' : 'Send'}
           </button>
         </div>
