@@ -33,12 +33,11 @@
     </button>
     <input
       on:click={copyToClipboard}
-      class="px-4 py-2 border"
+      class="hidden px-4 py-2 border md:inline-block"
       type="text"
-      class:hidden={!!!id}
       value={formURL}
       title={formURL} />
-    <button on:click={copyToClipboard} class="p-1" title="Copy form link">
+    <button on:click={copyToClipboard} class="p-1 mx-2" title="Copy form link">
       <Icon path={mdiContentCopy} />
     </button>
     <button class="px-4 py-2 ml-auto font-bold btn btn--primary" on:click={send} title="Send form">
