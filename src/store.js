@@ -29,10 +29,7 @@ export function addForm(newForm) {
 
 export function getAllForms() {
   let theForms;
-  const unsubsribe = forms.subscribe((_forms) => {
-    theForms = _forms;
-  });
-  unsubsribe();
+  forms.subscribe((_forms) => (theForms = _forms))();
   return theForms;
 }
 
@@ -61,10 +58,7 @@ export function updateForm(id, form) {
 
 export function getAllAnsers() {
   let theAnswers;
-  const unsubsribe = answers.subscribe((_answers) => {
-    theAnswers = _answers;
-  });
-  unsubsribe();
+  answers.subscribe((_answers) => (theAnswers = _answers))();
   return theAnswers;
 }
 
