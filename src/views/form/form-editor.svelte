@@ -92,7 +92,9 @@
     return () => document.body.classList.remove('bg-color-2');
   });
 
+  // Auto update when form changes
   $: mounted && form && !!id && store.updateForm(id, form);
+  // Get the answers of this form
   $: formAnswers = $answers.filter((answer) => answer.id === id);
 </script>
 
