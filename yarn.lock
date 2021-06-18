@@ -69,19 +69,16 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@sveltejs/vite-plugin-svelte@^1.0.0-next.10":
-  version "1.0.0-next.10"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.10.tgz#15526067ea2edd334420b1e14602e29b370be25e"
-  integrity sha512-ImvxbhPePm2hWNTKBSA3LHAYGwiEjHjvvgfPLXm4R87sfZ+BMXql9jBmDpzUC/URBLT4BB3Jxos/i523qkJBHg==
+"@sveltejs/vite-plugin-svelte@^1.0.0-next.11":
+  version "1.0.0-next.11"
+  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.0.0-next.11.tgz#1a415a1c4b1642a452e073438c63a73cfd203b51"
+  integrity sha512-EYR1I145k5rflVqhPwk3442m3bkYimTKSHM9uO5KdomXzt+GS9ZSBJQE3/wy1Di9V8OnGa3oKpckI3OZsHkTIA==
   dependencies:
     "@rollup/pluginutils" "^4.1.0"
     chalk "^4.1.1"
     debug "^4.3.2"
-    hash-sum "^2.0.0"
     require-relative "^0.8.7"
-    slash "^4.0.0"
-    source-map "^0.7.3"
-    svelte-hmr "^0.14.2"
+    svelte-hmr "^0.14.4"
 
 "@trysound/sax@0.1.1":
   version "0.1.1"
@@ -757,11 +754,6 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
-
-hash-sum@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/hash-sum/-/hash-sum-2.0.0.tgz#81d01bb5de8ea4a214ad5d6ead1b523460b0b45a"
-  integrity sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==
 
 hex-color-regex@^1.1.0:
   version "1.1.0"
@@ -1684,11 +1676,6 @@ sirv@^1.0.12:
     mime "^2.3.1"
     totalist "^1.0.0"
 
-slash@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
-  integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
-
 source-map-js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
@@ -1809,10 +1796,10 @@ svelte-check@^2.1.0:
     svelte-preprocess "^4.0.0"
     typescript "*"
 
-svelte-hmr@^0.14.2:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.3.tgz#b6a6781bc923352e3c257ccd7d87d01821ea2d95"
-  integrity sha512-N56xX405zLMw2tpGHKRx5h+kmdeZwxI21pvyC6OyBHJDCF6DlwWBm9TifdQmSD4dloWSmpDPzHWYa3CSjfopUg==
+svelte-hmr@^0.14.4:
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.4.tgz#b7ef2bfeef23916e0e912828c50645ca572ac355"
+  integrity sha512-kItFF7vqzStckSigoFmMnxJpTOdB9TWnQAW6Js+yAB4277tLbJIIE5KBlGHNmJNpA7MguqidsPB27Uw5UzQPCA==
 
 svelte-preprocess@^4.0.0, svelte-preprocess@^4.7.3:
   version "4.7.3"
