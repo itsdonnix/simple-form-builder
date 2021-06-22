@@ -3,8 +3,6 @@
   import { createEventDispatcher } from 'svelte';
   import Icon from './Icon.svelte';
 
-  let self;
-
   const emit = createEventDispatcher();
 
   function emitQuestionType(type) {
@@ -14,7 +12,6 @@
 
 <button
   aria-label="Add question"
-  bind:this={self}
   class="flex items-center px-2 py-1 btn btn--primary"
   title="Add a new question">
   <div class="p-2">
