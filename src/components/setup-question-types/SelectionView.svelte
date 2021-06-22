@@ -67,7 +67,7 @@
               value={otherOptionValue}
               name={'option--' + number}
               {disabled}
-              required={answer.length === 0} />
+              required={question.required} />
           {:else}
             <input
               class="inline-block mr-2"
