@@ -1,4 +1,6 @@
 <script>
+  import Required from '../Required.svelte';
+
   export let question;
   export let number;
   export let disabled = true;
@@ -29,7 +31,7 @@
     <p class="text-lg whitespace-pre">
       {question.text}
       {#if question.required}
-        <span class="text-red-600">*</span>
+        <Required />
       {/if}
     </p>
     <div class="flex flex-col mt-2">
@@ -67,7 +69,7 @@
               value={otherOptionValue}
               name={'option--' + number}
               {disabled}
-              required={answer.length === 0} />
+              required={question.required} />
           {:else}
             <input
               class="inline-block mr-2"

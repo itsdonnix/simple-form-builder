@@ -1,4 +1,6 @@
 <script>
+  import Required from '../Required.svelte';
+
   export let number;
   export let question;
   export let answer = '';
@@ -11,7 +13,7 @@
     <p class="text-lg whitespace-pre">
       {question.text}
       {#if question.required}
-        <span class="text-red-600">*</span>
+        <Required />
       {/if}
     </p>
     {#if question.multiline}

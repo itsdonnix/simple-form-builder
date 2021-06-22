@@ -3,8 +3,6 @@
   import { createEventDispatcher } from 'svelte';
   import Icon from './Icon.svelte';
 
-  let self;
-
   const emit = createEventDispatcher();
 
   function emitQuestionType(type) {
@@ -14,24 +12,23 @@
 
 <button
   aria-label="Add question"
-  bind:this={self}
   class="flex items-center px-2 py-1 btn btn--primary"
   title="Add a new question">
   <div class="p-2">
-    <Icon path={mdiPlus} width="30px" height="30px" />
+    <Icon path={mdiPlus} width="20px" height="20px" />
   </div>
-  <div class="p-1">
-    <div class="p-2 inner-label">Add question</div>
+  <div>
+    <div class="p-1 inner-label">Add question</div>
     <div class="hidden-buttons">
       <button
         aria-label="Add question with options type"
-        class="p-2 text-black bg-white"
+        class="p-1 text-black bg-white"
         on:click={() => emitQuestionType('selection')}>Options</button>
       <button
         aria-label="Add question with essay type"
-        class="p-2 text-black bg-white"
+        class="p-1 text-black bg-white"
         on:click={() => emitQuestionType('essay')}>Text</button>
-      <button class="p-2 text-black bg-white">Others</button>
+      <button class="p-1 text-black bg-white">Others</button>
     </div>
   </div>
 </button>
