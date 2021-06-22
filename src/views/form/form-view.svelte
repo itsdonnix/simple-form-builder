@@ -3,6 +3,7 @@
   import * as store from '../../store.js';
   import TextView from '../../components/setup-question-types/TextView.svelte';
   import Icon from '../../components/Icon.svelte';
+  import Required from '../../components/Required.svelte';
   import SelectionView from '../../components/setup-question-types/SelectionView.svelte';
   import { mdiCheck } from '@mdi/js';
   import { generateSessionId, getSessionID } from '../../session.js';
@@ -80,7 +81,7 @@
         </div>
 
         <div class="flex flex-col p-5">
-          <label class="text-sm" for="name">Name <span class="text-red-600">*</span></label>
+          <label class="text-sm" for="name">Name <Required /></label>
           <input
             name="name"
             class="p-2 mt-1 border border-gray-400"
@@ -91,7 +92,7 @@
         </div>
 
         <div class="flex flex-col p-5">
-          <label class="text-sm" for="name">Number Phone <span class="text-red-600">*</span></label>
+          <label class="text-sm" for="name">Number Phone <Required /></label>
           <input
             name="phone-number"
             class="p-2 mt-1 border border-gray-400"
