@@ -21,8 +21,8 @@
     "prettier-plugin-svelte": "^2.3.1",
     "sirv-cli": "^1.0.12",
     "svelte": "^3.38.3",
+    "svelte-preprocess": "^4.7.4",
     "svelte-check": "^2.2.2",
-    "svelte-preprocess": "^4.7.3",
     "svelte-spa-router": "^3.2.0",
     "tailwindcss": "^2.2.4",
     "vite": "^2.4.2"
