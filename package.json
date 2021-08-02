@@ -20,7 +20,7 @@
     "postcss": "^8.3.5",
     "prettier-plugin-svelte": "^2.3.1",
     "sirv-cli": "^1.0.12",
-    "svelte": "^3.38.3",
+    "svelte": "^3.41.0",
     "svelte-preprocess": "^4.7.4",
     "svelte-check": "^2.2.3",
     "svelte-spa-router": "^3.2.0",
