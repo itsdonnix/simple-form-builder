@@ -19,7 +19,7 @@
     "prettier": "^2.3.2",
     "postcss": "^8.3.5",
     "prettier-plugin-svelte": "^2.3.1",
-    "sirv-cli": "^1.0.12",
+    "sirv-cli": "^1.0.14",
     "svelte": "^3.42.1",
     "svelte-preprocess": "^4.7.4",
     "svelte-check": "^2.2.4",
