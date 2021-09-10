@@ -7,7 +7,5 @@ async function digestMessage(message) {
 }
 
 export async function generateHash() {
-  const date = Date.now();
-  const hash = await digestMessage(date);
-  return hash;
+  return await digestMessage(Date.now());
 }
