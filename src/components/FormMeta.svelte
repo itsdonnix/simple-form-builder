@@ -1,6 +1,6 @@
 <script>
-  export let title = 'Formulir tanpa judul';
-  export let description = 'Deskripsi formulir';
+  export let title = '';
+  export let description = '';
 
   let preview = true;
   let self;
@@ -30,11 +30,11 @@
         bind:this={inputTitleEl}
         bind:value={title}
         class="p-2 mb-2 text-xl"
-        placeholder="Masukkan judul formulir"
+        placeholder="Form title"
         type="text" />
 
       <!-- FORM DESCRIPTION -->
-      <textarea bind:value={description} class="p-2" placeholder="Masukkan deskripsi formulir" type="text" rows="3" />
+      <textarea bind:value={description} class="p-2" placeholder="Form description" type="text" rows="3" />
     </div>
   {/if}
 </div>
