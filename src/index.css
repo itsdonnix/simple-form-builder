@@ -116,3 +116,9 @@ input[type='checkbox'] {
     padding-left: calc(5% - 30px);
   }
 }
+
+@media (max-width: 500px) {
+  .delete-question-button {
+    display: initial;
+  }
+}
