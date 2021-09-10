@@ -24,9 +24,7 @@
       <p class="mt-2">{description}</p>
     </div>
   {:else}
-    <div
-      class="flex flex-col w-full p-5 bg-gray-100 form-meta-inputs"
-      style="height: 100%">
+    <div class="flex flex-col w-full p-5 bg-gray-100 form-meta-inputs">
       <!-- FORM TITLE -->
       <input
         bind:this={inputTitleEl}
@@ -36,12 +34,7 @@
         type="text" />
 
       <!-- FORM DESCRIPTION -->
-      <textarea
-        bind:value={description}
-        class="p-2"
-        placeholder="Masukkan deskripsi formulir"
-        type="text"
-        rows="3" />
+      <textarea bind:value={description} class="p-2" placeholder="Masukkan deskripsi formulir" type="text" rows="3" />
     </div>
   {/if}
 </div>

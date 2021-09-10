@@ -10,10 +10,7 @@
   }
 </script>
 
-<button
-  aria-label="Add question"
-  class="flex items-center px-2 py-1 btn btn--primary"
-  title="Add a new question">
+<button aria-label="Add question" class="flex items-center px-2 py-1 btn btn--primary" title="Add a new question">
   <div class="p-2">
     <Icon path={mdiPlus} width="20px" height="20px" />
   </div>
