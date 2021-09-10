@@ -11,8 +11,8 @@
     "serve": "sirv dist"
   },
   "devDependencies": {
-    "@mdi/js": "^5.9.55",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.21",
+    "@mdi/js": "^6.1.95",
     "autoprefixer": "^10.3.3",
     "cssnano": "^5.0.8",
     "npm-run-all": "^4.1.5",
