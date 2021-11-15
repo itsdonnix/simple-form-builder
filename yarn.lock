@@ -152,16 +152,16 @@ arg@^5.0.1:
   resolved "https://registry.yarnpkg.com/arg/-/arg-5.0.1.tgz#eb0c9a8f77786cad2af8ff2b862899842d7b6adb"
   integrity sha512-e0hDa9H2Z9AwFkk2qDlwhoMYE4eToKarchkQHovNdLTCYMHZHeRjI71crOh+dio4K6u1IcwubQqo79Ga4CyAQA==
 
-autoprefixer@^10.3.4:
-  version "10.3.4"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.3.4.tgz#29efe5d19f51c281953178ddb5b84c5f1ca24c86"
-  integrity sha512-EKjKDXOq7ug+jagLzmnoTRpTT0q1KVzEJqrJd0hCBa7FiG0WbFOBCcJCy2QkW1OckpO3qgttA1aWjVbeIPAecw==
+autoprefixer@^10.4.0:
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.0.tgz#c3577eb32a1079a440ec253e404eaf1eb21388c8"
+  integrity sha512-7FdJ1ONtwzV1G43GDD0kpVMn/qbiNqyOPMFTX5nRffI+7vgWoFEc6DcXOxHJxrWNDXrZh18eDsZjvZGUljSRGA==
   dependencies:
-    browserslist "^4.16.8"
-    caniuse-lite "^1.0.30001252"
-    colorette "^1.3.0"
+    browserslist "^4.17.5"
+    caniuse-lite "^1.0.30001272"
     fraction.js "^4.1.1"
     normalize-range "^0.1.2"
+    picocolors "^1.0.0"
     postcss-value-parser "^4.1.0"
 
 balanced-match@^1.0.0:
@@ -194,16 +194,16 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-browserslist@^4.0.0, browserslist@^4.16.0, browserslist@^4.16.6, browserslist@^4.16.8:
-  version "4.16.8"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.16.8.tgz#cb868b0b554f137ba6e33de0ecff2eda403c4fb0"
-  integrity sha512-sc2m9ohR/49sWEbPj14ZSSZqp+kbi16aLao42Hmn3Z8FpjuMaq2xCA2l4zl9ITfyzvnvyE0hcg62YkIGKxgaNQ==
+browserslist@^4.0.0, browserslist@^4.16.0, browserslist@^4.16.6, browserslist@^4.17.5:
+  version "4.18.0"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.18.0.tgz#849944d9bbbbe5ff6f418a8b558e3effca433cae"
+  integrity sha512-ER2M0g5iAR84fS/zjBDqEgU6iO5fS9JI2EkHr5zxDxYEFk3LjhU9Vpp/INb6RMQphxko7PDV1FH38H/qVP5yCA==
   dependencies:
-    caniuse-lite "^1.0.30001251"
-    colorette "^1.3.0"
-    electron-to-chromium "^1.3.811"
+    caniuse-lite "^1.0.30001280"
+    electron-to-chromium "^1.3.896"
     escalade "^3.1.1"
-    node-releases "^1.1.75"
+    node-releases "^2.0.1"
+    picocolors "^1.0.0"
 
 buffer-crc32@^0.2.5:
   version "0.2.13"
@@ -243,10 +243,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001251, caniuse-lite@^1.0.30001252:
-  version "1.0.30001252"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001252.tgz#cb16e4e3dafe948fc4a9bb3307aea054b912019a"
-  integrity sha512-I56jhWDGMtdILQORdusxBOH+Nl/KgQSdDmpJezYddnAkVOmnoU8zwjTV9xAjMIYxr0iPreEAVylCGcmHCjfaOw==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001272, caniuse-lite@^1.0.30001280:
+  version "1.0.30001280"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001280.tgz#066a506046ba4be34cde5f74a08db7a396718fb7"
+  integrity sha512-kFXwYvHe5rix25uwueBxC569o53J6TpnGu0BEEn+6Lhl2vsnAumRFWEBhDft1fwyo6m1r4i+RqA4+163FpeFcA==
 
 chalk@^2.0.0, chalk@^2.4.1:
   version "2.4.2"
@@ -324,11 +324,6 @@ colord@^2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.1.tgz#c961ea0efeb57c9f0f4834458f26cb9cc4a3f90e"
   integrity sha512-4LBMSt09vR0uLnPVkOUBnmxgoaeN4ewRbx801wY/bXcltXfpR/G46OdWn96XpYmCWuYvO46aBZP4NgX8HpNAcw==
-
-colorette@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.3.0.tgz#ff45d2f0edb244069d3b772adeb04fed38d0a0af"
-  integrity sha512-ecORCqbSFP7Wm8Y6lyqMJjexBQqXSF7SSeaTyGGphogUjBlFP9m9o08wy86HL2uB7fMTxtOUzLMk7ogKcxMg1w==
 
 commander@^6.0.0:
   version "6.2.0"
@@ -553,10 +548,10 @@ domutils@^2.6.0:
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
 
-electron-to-chromium@^1.3.811:
-  version "1.3.818"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.818.tgz#32ed024fa8316e5d469c96eecbea7d2463d80085"
-  integrity sha512-c/Z9gIr+jDZAR9q+mn40hEc1NharBT+8ejkarjbCDnBNFviI6hvcC5j2ezkAXru//bTnQp5n6iPi0JA83Tla1Q==
+electron-to-chromium@^1.3.896:
+  version "1.3.896"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.896.tgz#4a94efe4870b1687eafd5c378198a49da06e8a1b"
+  integrity sha512-NcGkBVXePiuUrPLV8IxP43n1EOtdg+dudVjrfVEUd/bOqpQUFZ2diL5PPYzbgEhZFEltdXV3AcyKwGnEQ5lhMA==
 
 entities@^2.0.0:
   version "2.2.0"
@@ -1178,10 +1173,10 @@ node-emoji@^1.11.0:
   dependencies:
     lodash "^4.17.21"
 
-node-releases@^1.1.75:
-  version "1.1.75"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.75.tgz#6dd8c876b9897a1b8e5a02de26afa79bb54ebbfe"
-  integrity sha512-Qe5OUajvqrqDSy6wrWFmMwfJ0jVgwiw4T3KqmbTcZ62qW0gQkheXYhcFM1+lOVcGUoRxcEcfyvFMAnDgaF1VWw==
+node-releases@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.1.tgz#3d1d395f204f1f2f29a54358b9fb678765ad2fc5"
+  integrity sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==
 
 normalize-package-data@^2.3.2:
   version "2.5.0"
