@@ -37,7 +37,7 @@
     <div class="flex flex-col mt-2">
       {#each question.options as option}
         <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label class="flex items-center mb-2">
+        <label class="flex items-center mb-2 py-1">
           {#if question.multiple}
             <input
               class="inline-block mr-2"

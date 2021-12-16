@@ -111,6 +111,10 @@ input[type='checkbox'] {
   max-width: calc(100vh - 2rem);
 }
 
+.question-selection-type.preview label input~div {
+  flex-basis: 100%;
+}
+
 .new-form-card .icon {
   fill: var(--main-bg-color);
 }
