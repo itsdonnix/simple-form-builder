@@ -110,6 +110,12 @@ input[type='checkbox'] {
   background-color: var(--bg-white-color);
 }
 
+.form-actions {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
 .form-setup-panel .question-selection-type.preview:hover {
   @apply bg-gray-200;
 }
