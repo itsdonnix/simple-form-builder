@@ -8,10 +8,10 @@ module.exports = {
     uniformColorPalette: true,
     extendedFontSizeScale: true,
   },
-  purge: {
-    content: ['./src/**/*.svelte', './public/*.html'],
-    whitelistPatterns: [/svelte-/],
-  },
+  // purge: {
+  content: ['./src/**/*.svelte', './public/*.html'],
+  // whitelistPatterns: [/svelte-/],
+  // },
   theme: {
     extend: {},
   },
