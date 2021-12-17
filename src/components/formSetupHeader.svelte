@@ -1,6 +1,7 @@
 <script>
   import { mdiContentCopy, mdiTrashCanOutline } from '@mdi/js';
   import { createEventDispatcher } from 'svelte';
+  import { addHashToUrl } from '../utils';
   import Icon from './Icon.svelte';
 
   const emit = createEventDispatcher();
@@ -8,7 +9,8 @@
   export let id = '';
   let loading = false;
 
-  $: formURL = (import.meta.env.MODE === 'development' ? location.host : import.meta.env.BASE_URL) + '/#/form/' + id;
+  $: formURL =
+  addHashToUrl(import.meta.env.MODE === 'development' ? location.origin : import.meta.env.BASE_URL, `#/form/${id}`);
 
   function copyToClipboard() {
     navigator.clipboard.writeText(formURL);
