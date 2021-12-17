@@ -101,7 +101,7 @@
 <FormSetupHeader id={form.id} on:delete-form-clicked={removeForm} />
 
 <div class="flex flex-col items-center">
-  <div class="w-full mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
+  <div class="w-full mx-5 my-10 bg-white shadow-md bg-transparent" style="max-width: 700px">
     <Tabs>
       <TabList>
         <Tab>Questions</Tab>

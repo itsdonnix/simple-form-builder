@@ -22,9 +22,13 @@
     text-align: center;
     width: 100%;
     padding: 0.8em;
+    padding-top: 0.5em;
+    border-top: 0.3em solid;
+    border-color: transparent;
   }
 
   .selected {
+    border-color: var(--main-bg-color);
     color: #000;
     font-weight: bold;
     background-color: #fff;

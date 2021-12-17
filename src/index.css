@@ -97,9 +97,17 @@ input[type='checkbox'] {
   @apply hidden;
 }
 
+.tabs > div:nth-child(2) {
+  background-color: var(--bg-white-color);
+}
+
 .setup--question-item:hover .delete-question-button,
 .setup--question-item:focus-within .delete-question-button {
   display: initial;
+}
+
+.form-setup-panel {
+  background-color: var(--bg-white-color);
 }
 
 .form-setup-panel .question-selection-type.preview:hover {
