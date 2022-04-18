@@ -1526,10 +1526,10 @@ prettier-plugin-svelte@^2.7.0:
   resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.7.0.tgz#ecfa4fe824238a4466a3497df1a96d15cf43cabb"
   integrity sha512-fQhhZICprZot2IqEyoiUYLTRdumULGRvw0o4dzl5jt0jfzVWdGqeYW27QTWAeXhoupEZJULmNoH3ueJwUWFLIA==
 
-prettier@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
-  integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==
+prettier@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
+  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -1830,10 +1830,10 @@ svelte-hmr@^0.14.7:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.7.tgz#7fa8261c7b225d9409f0a86f3b9ea5c3ca6f6607"
   integrity sha512-pDrzgcWSoMaK6AJkBWkmgIsecW0GChxYZSZieIYfCP0v2oPyx2CYU/zm7TBIcjLVUPP714WxmViE9Thht4etog==
 
-svelte-preprocess@^4.0.0, svelte-preprocess@^4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.10.1.tgz#5f435e8aaa82976165bc8f5fa690e2e5ba084760"
-  integrity sha512-NSNloaylf+o9UeyUR2KvpdxrAyMdHl3U7rMnoP06/sG0iwJvlUM4TpMno13RaNqovh4AAoGsx1jeYcIyuGUXMw==
+svelte-preprocess@^4.0.0, svelte-preprocess@^4.10.6:
+  version "4.10.6"
+  resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.10.6.tgz#5f9a53e7ed3b85fc7e0841120c725b76ac5a1ba8"
+  integrity sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==
   dependencies:
     "@types/pug" "^2.0.4"
     "@types/sass" "^1.16.0"
