@@ -6,7 +6,7 @@ module.exports = defineConfig(({ /* command, */ mode }) => {
   return {
     base: './',
     build: {
-      target: 'es2015',
+      target: 'es2016',
     },
     plugins: [
       svelte({
