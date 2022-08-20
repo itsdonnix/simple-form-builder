@@ -1,5 +1,6 @@
 const { svelte } = require('@sveltejs/vite-plugin-svelte');
 const { defineConfig } = require('vite');
+const sveltePreprocess = require('svelte-preprocess');
 
 module.exports = defineConfig(({ /* command, */ mode }) => {
   const isProduction = mode === 'production';
@@ -12,6 +13,14 @@ module.exports = defineConfig(({ /* command, */ mode }) => {
       svelte({
         hot: !isProduction,
         emitCss: true,
+        preprocess: [
+          sveltePreprocess({
+            defaults: {
+              style: 'postcss',
+            },
+            postcss: true,
+          }),
+        ],
       }),
     ],
   };
