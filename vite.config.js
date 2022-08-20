@@ -21,6 +21,9 @@ module.exports = defineConfig(({ /* command, */ mode }) => {
             postcss: true,
           }),
         ],
+        compilerOptions: {
+          dev: !isProduction,
+        },
       }),
     ],
   };
