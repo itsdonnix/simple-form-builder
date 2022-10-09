@@ -8,7 +8,8 @@
     "build": "vite build",
     "build:deploy": "vite build --base=https://donnisnoni.github.io/simple-form-builder/",
     "check": "svelte-check --human",
-    "serve": "sirv dist"
+    "serve": "sirv dist",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "@mdi/js": "^6.6.96",
