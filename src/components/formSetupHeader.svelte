@@ -32,7 +32,7 @@
     </button>
     <input
       aria-label="Form link"
-      on:click={copyToClipboard}
+      on:dblclick={(e) => e.target?.select()}
       class="hidden px-2 py-2 border sm:inline-block"
       type="text"
       value={formURL}
