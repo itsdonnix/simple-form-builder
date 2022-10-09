@@ -10,7 +10,7 @@
 <div class="flex p-5 question-selection-type preview">
   <div class="mr-1 text-lg">{number}.</div>
   <div class="flex flex-col flex-1">
-    <p class="text-lg whitespace-pre">
+    <p class="text-lg word-break-all">
       {question.text}
       {#if question.required}
         <Required />

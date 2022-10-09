@@ -125,12 +125,16 @@ input[type='checkbox'] {
   max-width: calc(100vh - 2rem);
 }
 
-.question-selection-type.preview label input~div {
+.question-selection-type.preview label input ~ div {
   flex-basis: 100%;
 }
 
 .new-form-card .icon {
   fill: var(--main-bg-color);
+}
+
+.word-break-all {
+  word-break: break-all;
 }
 
 @media (min-width: 768px) {

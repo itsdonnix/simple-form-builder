@@ -28,7 +28,7 @@
 <div class="flex p-5 question-selection-type preview">
   <div class="mr-1 text-lg">{number}.</div>
   <div class="flex-1">
-    <p class="text-lg whitespace-pre">
+    <p class="text-lg word-break-all">
       {question.text}
       {#if question.required}
         <Required />
@@ -37,7 +37,7 @@
     <div class="flex flex-col mt-2">
       {#each question.options as option}
         <!-- svelte-ignore a11y-label-has-associated-control -->
-        <label class="flex items-center mb-2 py-1">
+        <label class="flex items-center py-1 mb-2">
           {#if question.multiple}
             <input
               class="inline-block mr-2"
