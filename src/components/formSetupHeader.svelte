@@ -16,9 +16,7 @@
 
   function send() {
     loading = true;
-    setTimeout(() => {
-      loading = false;
-    }, 2000);
+    setTimeout(() => (loading = false), 2000);
   }
 </script>
 
@@ -35,10 +33,11 @@
     <input
       aria-label="Form link"
       on:click={copyToClipboard}
-      class="hidden px-4 py-2 border sm:inline-block"
+      class="hidden px-2 py-2 border sm:inline-block"
       type="text"
       value={formURL}
-      title={formURL} />
+      title={formURL}
+      readonly />
     <button aria-label="Copy form link" on:click={copyToClipboard} class="p-1 mx-2" title="Copy form link">
       <Icon path={mdiContentCopy} />
     </button>
