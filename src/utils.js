@@ -9,9 +9,3 @@ async function digestMessage(message) {
 export async function generateHash() {
   return await digestMessage(Date.now());
 }
-
-export function addHashToUrl(base, hash) {
-  const url = new URL(base);
-  url.hash = hash
-  return url.toString()
-}
