@@ -19,12 +19,14 @@
     disabled
     placeholder="Others"
     style="max-width: 300px"
-    type="text" />
+    type="text"
+  />
   <button
     aria-label="Remove option"
     class="ml-2 delete-question-button"
     on:click={() => emit('delete')}
-    title="Remove option">
+    title="Remove option"
+  >
     <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
   </button>
 </div>

@@ -23,7 +23,8 @@
         placeholder="Input your answer"
         rows="3"
         required={question.required}
-        bind:value={answer} />
+        bind:value={answer}
+      />
     {:else}
       <input
         class="p-2 mt-2 border border-gray-400"
@@ -31,7 +32,8 @@
         placeholder="Input your answer"
         type="text"
         required={question.required}
-        bind:value={answer} />
+        bind:value={answer}
+      />
     {/if}
   </div>
 </div>

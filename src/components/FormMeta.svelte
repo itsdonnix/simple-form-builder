@@ -17,7 +17,8 @@
   class:preview
   on:click={() => (preview = preview && false)}
   on:focusout={(e) => (preview = !self.contains(e.relatedTarget))}
-  tabindex="0">
+  tabindex="0"
+>
   {#if preview}
     <div class="p-5 form-meta-preview">
       <h2 class="text-2xl">{title}</h2>
@@ -31,7 +32,8 @@
         bind:value={title}
         class="p-2 mb-2 text-xl"
         placeholder="Form title"
-        type="text" />
+        type="text"
+      />
 
       <!-- FORM DESCRIPTION -->
       <textarea bind:value={description} class="p-2" placeholder="Form description" type="text" rows="3" />

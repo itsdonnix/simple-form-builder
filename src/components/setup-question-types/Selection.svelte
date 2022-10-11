@@ -55,7 +55,8 @@
   class:bg-gray-100={!preview}
   on:click={focus}
   on:focusout={(e) => (preview = !self.contains(e.relatedTarget))}
-  tabindex="0">
+  tabindex="0"
+>
   <!-- PREVIEW MODE -->
   {#if preview}
     <SelectionView number={index + 1} {question} />
@@ -68,7 +69,8 @@
           aria-label="Remove question"
           class="flex items-center px-3 py-2"
           on:click={() => emit('delete', index)}
-          title="Remove question">
+          title="Remove question"
+        >
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
@@ -85,7 +87,8 @@
           class="p-2 setup--question-text"
           placeholder="Input a question"
           type="text"
-          rows="3" />
+          rows="3"
+        />
 
         <div bind:this={optionItemsParent} class="flex flex-col justify-center mt-5">
           <!--  -->
@@ -101,7 +104,8 @@
                 aria-label="Remove option"
                 class="ml-2 delete-question-button"
                 on:click={() => removeOption(index)}
-                title="Remove option">
+                title="Remove option"
+              >
                 <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
               </button>
             </div>

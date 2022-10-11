@@ -68,7 +68,8 @@
     <div class="flex flex-col items-center justify-center">
       <div
         class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
-        style="max-width: 700px; min-height: 200px">
+        style="max-width: 700px; min-height: 200px"
+      >
         <h1 class="text-xl">It looks like the form you are looking for does not exist...</h1>
       </div>
     </div>
@@ -88,7 +89,8 @@
             placeholder="Input your name"
             bind:value={answer.name}
             type="text"
-            required />
+            required
+          />
         </div>
 
         <div class="flex flex-col p-5">
@@ -99,7 +101,8 @@
             placeholder="Input your phone number"
             bind:value={answer.phoneNumber}
             type="tel"
-            required />
+            required
+          />
         </div>
 
         <hr class="my-5" />
@@ -127,7 +130,8 @@
   <div class="flex flex-col items-center justify-center">
     <div
       class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
-      style="max-width: 700px; min-height: 200px">
+      style="max-width: 700px; min-height: 200px"
+    >
       <Icon path={mdiCheck} width="50px" height="50px" />
       <h1 class="text-xl">Your answer is successfully sent!</h1>
     </div>

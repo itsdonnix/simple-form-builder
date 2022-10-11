@@ -26,7 +26,8 @@
       aria-label="Delete form"
       class="flex items-center p-1 mx-2"
       on:click={() => confirm('Are you sure want to delete this form?') && emit('delete-form-clicked')}
-      title="Delete this form">
+      title="Delete this form"
+    >
       <Icon path={mdiTrashCanOutline} />
       <!-- <span class="hidden mx-2 sm:inline-block">Delete Form</span> -->
     </button>
@@ -37,7 +38,8 @@
       type="text"
       value={formURL}
       title={formURL}
-      readonly />
+      readonly
+    />
     <button aria-label="Copy form link" on:click={copyToClipboard} class="p-1 mx-2" title="Copy form link">
       <Icon path={mdiContentCopy} />
     </button>
@@ -45,7 +47,8 @@
       aria-label="Send the form"
       class="px-4 py-2 ml-auto font-bold btn btn--primary"
       on:click={send}
-      title="Send form">
+      title="Send form"
+    >
       {loading ? 'Sending...' : 'Send'}
     </button>
   </div>
