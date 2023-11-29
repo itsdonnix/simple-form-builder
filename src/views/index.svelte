@@ -18,6 +18,7 @@
     </div>
   </div>
 
+  {#if $forms.length}
   <div class="mt-4">
     <h3 class="p-2 font-bold h3">Recent Forms</h3>
     <div class="flex flex-col gap-2 m-3 md:flex-row">
@@ -31,4 +32,5 @@
       {/each}
     </div>
   </div>
+  {/if}
 </main>
