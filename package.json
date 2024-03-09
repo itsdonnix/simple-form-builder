@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base ./",
-    "build:deploy": "vite build --base https://donnisnoni.github.io/simple-form-builder/",
+    "build:deploy": "vite build --base https://itsdonnix.github.io/simple-form-builder/",
     "check": "svelte-check --human",
     "serve": "sirv dist",
     "clean": "rm -rf dist"
