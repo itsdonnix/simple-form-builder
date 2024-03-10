@@ -70,7 +70,6 @@ body.bg-color-2 {
 .new-form-card {
   min-height: 100px;
   background-color: var(--card-bg-color);
-  border-radius: 5px;
   color: var(--main-bg-color);
 }
 
