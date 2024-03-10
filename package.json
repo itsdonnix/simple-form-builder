@@ -1,7 +1,7 @@
 {
   "name": "simple-form-builder",
   "private": true,
-  "author": "Don Alfons Nisnoni",
+  "author": "Don Alfons",
   "scripts": {
     "dev": "vite",
     "build": "vite build --base ./",
