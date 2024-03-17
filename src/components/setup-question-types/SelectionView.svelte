@@ -98,3 +98,9 @@
     </div>
   </div>
 </div>
+
+<style>
+  .question-selection-type.preview input {
+    pointer-events: none;
+  }
+</style>

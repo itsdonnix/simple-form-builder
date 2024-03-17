@@ -37,3 +37,9 @@
     {/if}
   </div>
 </div>
+
+<style>
+  .question-selection-type.preview :where(input, textarea) {
+    pointer-events: none
+  }
+</style>
