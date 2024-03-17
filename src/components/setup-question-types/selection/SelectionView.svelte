@@ -1,5 +1,5 @@
 <script>
-  import Required from '../Required.svelte';
+  import Required from '../../Required.svelte';
 
   export let question;
   export let number;

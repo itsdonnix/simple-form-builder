@@ -2,12 +2,12 @@
   import { onMount, tick } from 'svelte';
   import ButtonAddQuestion from '../../components/ButtonAddQuestion.svelte';
   import FormMeta from '../../components/FormMeta.svelte';
-  import Tab from '../../components/Tab.svelte';
-  import TabList from '../../components/TabList.svelte';
-  import TabPanel from '../../components/TabPanel.svelte';
-  import Tabs from '../../components/Tabs.svelte';
-  import Selection from '../../components/setup-question-types/Selection.svelte';
-  import Text from '../../components/setup-question-types/Text.svelte';
+  import Tab from '../../components/tabs/Tab.svelte';
+  import TabList from '../../components/tabs/TabList.svelte';
+  import TabPanel from '../../components/tabs/TabPanel.svelte';
+  import Tabs from '../../components/tabs/Tabs.svelte';
+  import Selection from '../../components/setup-question-types/selection/Selection.svelte';
+  import Text from '../../components/setup-question-types/text/Text.svelte';
   import * as store from '../../store.js';
   import { answers } from '../../store.js';
   import FormSetupHeader from '../../components/formSetupHeader.svelte';

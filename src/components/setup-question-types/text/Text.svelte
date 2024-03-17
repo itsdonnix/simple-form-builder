@@ -1,7 +1,7 @@
 <script>
   import { mdiTrashCanOutline } from '@mdi/js';
   import { createEventDispatcher, tick } from 'svelte';
-  import Icon from '../Icon.svelte';
+  import Icon from '../../Icon.svelte';
   import TextView from './TextView.svelte';
 
   const emit = createEventDispatcher();
