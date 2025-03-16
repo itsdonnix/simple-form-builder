@@ -6,6 +6,7 @@
   export let disabled = true;
   export let answer = null;
   let otherOptionValue = '';
+  export let preview = false;
 
   if (question.multiple) {
     answer = [];
@@ -25,7 +26,7 @@
   }
 </script>
 
-<div class="flex p-5 question-selection-type preview">
+<div class="flex p-5 question-selection-type" class:preview>
   <div class="mr-1 text-lg">{number}.</div>
   <div class="flex-1">
     <p class="text-lg word-break-all">

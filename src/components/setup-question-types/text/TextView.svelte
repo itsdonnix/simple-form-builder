@@ -5,9 +5,10 @@
   export let question;
   export let answer = '';
   export let disabled = true;
+  export let preview = false;
 </script>
 
-<div class="flex p-5 question-selection-type preview">
+<div class="flex p-5 question-selection-type" class:preview>
   <div class="mr-1 text-lg">{number}.</div>
   <div class="flex flex-col flex-1">
     <p class="text-lg word-break-all">
