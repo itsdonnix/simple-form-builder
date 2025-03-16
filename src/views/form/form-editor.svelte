@@ -13,6 +13,7 @@
   import FormSetupHeader from '../../components/formSetupHeader.svelte';
   import { DefaultForm } from '../../shared';
   import { replace } from 'svelte-spa-router';
+  import FormAnswers from '../../components/FormAnswers.svelte';
 
   export let params;
   export let id;
@@ -99,7 +100,7 @@
   // Auto update when form changes
   $: mounted && form && !!id && store.updateForm(id, form);
   // Get the answers of this form
-  $: formAnswers = $answers.filter((answer) => answer.id === id);
+  $: respondents = $answers.filter((answer) => answer.id === id);
 </script>
 
 <FormSetupHeader on:delete-form-clicked={removeForm} />
@@ -130,32 +131,7 @@
       </TabPanel>
 
       <TabPanel>
-        <div class="p-5" tabindex="0">
-          <h2 class="text-xl">
-            Answers from ({formAnswers.length} respondents)
-          </h2>
-          <hr class="my-2" />
-          <div class="flex flex-col">
-            {#each formAnswers as answer}
-              <details class="mb-3 ml-1">
-                <summary class="py-1 text-lg">{answer.name} ({answer.phoneNumber})</summary>
-                {#each answer.answers as _answer, index}
-                  <div class="flex p-1 font-bold">
-                    <div class="mr-1">
-                      {index + 1}.
-                    </div>
-                    <div class="whitespace-pre">
-                      {form.questions[index].text}
-                    </div>
-                  </div>
-                  <div class="p-1 ml-4 whitespace-pre">
-                    {form.questions[index].multiple ? _answer.filter((_answer_) => !!_answer_).join(', ') : _answer}
-                  </div>
-                {/each}
-              </details>
-            {/each}
-          </div>
-        </div>
+        <FormAnswers questions={form.questions} {respondents} />
       </TabPanel>
     </Tabs>
   </div>
