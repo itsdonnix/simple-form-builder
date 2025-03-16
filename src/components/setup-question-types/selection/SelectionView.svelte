@@ -46,8 +46,7 @@
               name={'option--' + number}
               {disabled}
               bind:group={answer}
-              value={option}
-            />
+              value={option} />
           {:else}
             <input
               class="inline-block mr-2"
@@ -56,8 +55,7 @@
               {disabled}
               bind:group={answer}
               value={option}
-              required={question.required}
-            />
+              required={question.required} />
           {/if}
           <div>{option}</div>
         </label>
@@ -72,8 +70,7 @@
               value={otherOptionValue}
               name={'option--' + number}
               {disabled}
-              required={question.required}
-            />
+              required={question.required} />
           {:else}
             <input
               class="inline-block mr-2"
@@ -82,18 +79,16 @@
               value={otherOptionValue}
               name={'option--' + number}
               {disabled}
-              required={question.required}
-            />
+              required={question.required} />
           {/if}
           <input
-            class="flex-1 p-2 border border-gray-400 "
+            class="flex-1 p-2 border border-gray-400"
             {disabled}
             on:input={onInput}
             placeholder="Other"
             style="max-width: 300px"
             required={question.multiple ? answer.includes(otherOptionValue) : !question.options.includes(answer)}
-            type="text"
-          />
+            type="text" />
         </label>
       {/if}
     </div>

@@ -65,17 +65,16 @@
 
 {#if !formSent}
   {#if !form}
-    <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col justify-center items-center">
       <div
-        class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
-        style="max-width: 700px; min-height: 200px"
-      >
+        class="flex flex-col justify-center items-center p-3 mx-5 my-10 w-full bg-white shadow-md"
+        style="max-width: 700px; min-height: 200px">
         <h1 class="text-xl">It looks like the form you are looking for does not exist...</h1>
       </div>
     </div>
   {:else}
     <form on:submit|preventDefault={submit} class="flex flex-col items-center">
-      <div class="w-full p-1 mx-5 my-10 bg-white shadow-md" style="max-width: 700px">
+      <div class="p-1 mx-5 my-10 w-full bg-white shadow-md" style="max-width: 700px">
         <div class="p-5 form-meta-preview">
           <h2 class="text-2xl">{form.title}</h2>
           <p class="mt-2">{form.description}</p>
@@ -89,8 +88,7 @@
             placeholder="Input your name"
             bind:value={answer.name}
             type="text"
-            required
-          />
+            required />
         </div>
 
         <div class="flex flex-col p-5">
@@ -101,8 +99,7 @@
             placeholder="Input your phone number"
             bind:value={answer.phoneNumber}
             type="tel"
-            required
-          />
+            required />
         </div>
 
         <hr class="my-5" />
@@ -127,11 +124,10 @@
     </form>
   {/if}
 {:else}
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col justify-center items-center">
     <div
-      class="flex flex-col items-center justify-center w-full p-3 mx-5 my-10 bg-white shadow-md"
-      style="max-width: 700px; min-height: 200px"
-    >
+      class="flex flex-col justify-center items-center p-3 mx-5 my-10 w-full bg-white shadow-md"
+      style="max-width: 700px; min-height: 200px">
       <Icon path={mdiCheck} width="50px" height="50px" />
       <h1 class="text-xl">Your answer is successfully sent!</h1>
     </div>

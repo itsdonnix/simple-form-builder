@@ -15,18 +15,16 @@
     <input class="inline-block mr-2" type="radio" disabled />
   {/if}
   <input
-    class="flex-1 inline-block p-2 border border-gray-400"
+    class="inline-block flex-1 p-2 border border-gray-400"
     disabled
     placeholder="Others"
     style="max-width: 300px"
-    type="text"
-  />
+    type="text" />
   <button
     aria-label="Remove option"
     class="ml-2 delete-question-button"
     on:click={() => emit('delete')}
-    title="Remove option"
-  >
+    title="Remove option">
     <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
   </button>
 </div>

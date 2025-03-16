@@ -10,7 +10,7 @@
   import Text from '../../components/setup-question-types/text/Text.svelte';
   import * as store from '../../store.js';
   import { answers } from '../../store.js';
-  import FormSetupHeader from '../../components/formSetupHeader.svelte';
+  import FormSetupHeader from '../../components/FormSetupHeader.svelte';
   import { DefaultForm } from '../../shared';
   import { replace } from 'svelte-spa-router';
   import FormAnswers from '../../components/FormAnswers.svelte';
