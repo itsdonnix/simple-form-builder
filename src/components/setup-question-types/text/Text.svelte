@@ -52,7 +52,7 @@
     </div>
 
     <!-- QUESTION & OPTIONS -->
-    <div class="flex w-full p-5 question-selection-type-inputs" style="height: 100%">
+    <div class="flex p-5 w-full question-selection-type-inputs" style="height: 100%">
       <div class="mr-2">{index + 1}.</div>
       <div class="flex flex-col flex-1" style="height: 100%">
         <!-- QUESTION TEXT -->
