@@ -32,8 +32,7 @@
   class:bg-gray-100={!preview}
   on:click={focus}
   on:focusout={(e) => (preview = !self.contains(e.relatedTarget))}
-  tabindex="0"
->
+  tabindex="0">
   <!-- PREVIEW MODE -->
   {#if preview}
     <TextView number={index + 1} {question} />
@@ -46,8 +45,7 @@
           aria-label="Remove question"
           class="flex items-center px-3 py-2"
           on:click={() => emit('delete', index)}
-          title="Remove question"
-        >
+          title="Remove question">
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
@@ -64,9 +62,7 @@
           class="p-2 setup--question-text"
           placeholder="Input a question"
           type="text"
-          rows="3"
-        />
-
+          rows="3" />
         {#if question.multiline}
           <textarea class="p-2 mt-2 border border-gray-400" disabled placeholder="Input your answer" rows="3" />
         {:else}
