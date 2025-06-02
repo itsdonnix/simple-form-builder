@@ -1,5 +1,5 @@
 export const DefaultForm = {
-  title: 'Form without a title',
+  title: 'Untitled Form',
   description: 'Form description',
   questions: [],
   preview: false,
