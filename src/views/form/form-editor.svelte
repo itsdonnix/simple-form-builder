@@ -6,14 +6,13 @@
   import TabList from '../../components/tabs/TabList.svelte';
   import TabPanel from '../../components/tabs/TabPanel.svelte';
   import Tabs from '../../components/tabs/Tabs.svelte';
-  import Selection from '../../components/setup-question-types/selection/Selection.svelte';
-  import Text from '../../components/setup-question-types/text/Text.svelte';
   import * as store from '../../store.js';
   import { answers } from '../../store.js';
   import FormSetupHeader from '../../components/FormSetupHeader.svelte';
   import { DefaultForm } from '../../shared';
   import { replace } from 'svelte-spa-router';
   import FormAnswers from '../../components/FormAnswers.svelte';
+  import QuestionField from '../../components/setup-question-types/QuestionField.svelte';
 
   export let params;
   export let id;
@@ -118,12 +117,9 @@
           <FormMeta bind:title={form.title} bind:description={form.description} />
 
           {#each form.questions as question, index}
-            {#if question.type === 'selection'}
-              <Selection bind:preview={question.preview} bind:question {index} on:delete={deleteQuestion} />
-            {:else if question.type === 'essay'}
-              <Text bind:preview={question.preview} bind:question {index} on:delete={deleteQuestion} />
-            {/if}
+            <QuestionField {question} {index} on:delete={deleteQuestion} />
           {/each}
+
           <div class="p-5">
             <ButtonAddQuestion on:onSelectQuestionType={onCreateNewQuestionClicked} />
           </div>
