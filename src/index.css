@@ -128,6 +128,10 @@ input[type='checkbox'] {
   flex-basis: 100%;
 }
 
+.question-selection-type.preview :is(input, textarea) {
+  pointer-events: none;
+}
+
 .new-form-card .icon {
   fill: var(--main-bg-color);
 }
