@@ -14,6 +14,8 @@ export default class LocalStorage {
   }
 
   setData(data) {
-    data && localStorage.setItem(this.namespace, JSON.stringify(data));
+    if (data) {
+      localStorage.setItem(this.namespace, JSON.stringify(data));
+    }
   }
 }
