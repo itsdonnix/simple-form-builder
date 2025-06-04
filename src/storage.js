@@ -1,6 +1,4 @@
 export default class LocalStorage {
-  namespace = '';
-
   constructor(namespace, initialData = []) {
     this.namespace = namespace;
     if (!localStorage.getItem(namespace)) {
