@@ -81,15 +81,21 @@
     replace('/');
   }
 
+  let lastDocumentTitle;
+
   onMount(() => {
     if (!store.isFormExist(form.id)) {
       store.addForm(form);
     } else {
       form = store.getForm(id);
     }
+    lastDocumentTitle = document.title;
     document.body.classList.add('bg-color-2');
     mounted = true;
-    return () => document.body.classList.remove('bg-color-2');
+    return () => {
+      document.title = lastDocumentTitle;
+      document.body.classList.remove('bg-color-2');
+    };
   });
 
   $: {
