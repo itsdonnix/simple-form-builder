@@ -1,8 +1,13 @@
 <script>
+  import { onMount } from 'svelte';
   import { mdiPlusCircle } from '@mdi/js';
   import Icon from '../components/Icon.svelte';
   import { link } from 'svelte-spa-router';
   import { forms } from '../store.js';
+
+  onMount(() => {
+    document.title = window.__simpleFormBuilder_initialDocumentTitle;
+  });
 </script>
 
 <main class="margin-page">
