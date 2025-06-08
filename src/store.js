@@ -84,7 +84,7 @@ export function updateForm(id, form) {
  * Get all answers
  * @returns {Array}
  */
-export function getAllAnsers() {
+export function getAllAnswers() {
   let theAnswers;
   answers.subscribe((_answers) => (theAnswers = _answers))();
   return theAnswers;
@@ -105,7 +105,7 @@ export function addAnswer(newAnswer) {
  * @returns {Array}
  */
 export function getAnswersByFormIdAndPhoneNumber(id, phoneNumber) {
-  return getAllAnsers().filter((answer) => answer.id === id && answer.phoneNumber === phoneNumber);
+  return getAllAnswers().filter((answer) => answer.id === id && answer.phoneNumber === phoneNumber);
 }
 
 /**
@@ -115,7 +115,7 @@ export function getAnswersByFormIdAndPhoneNumber(id, phoneNumber) {
  * @returns {Array|null}
  */
 export function getAnswerByFormIdAndSessionId(formId, sessionId) {
-  const answers = getAllAnsers().filter((answer) => answer.id === formId && answer.sessionId === sessionId);
+  const answers = getAllAnswers().filter((answer) => answer.id === formId && answer.sessionId === sessionId);
   return answers.length ? answers[0] : null;
 }
 
