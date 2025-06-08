@@ -55,13 +55,12 @@
   class:bg-gray-100={!preview}
   on:click={focus}
   on:focusout={(e) => (preview = !self.contains(e.relatedTarget))}
-  tabindex="0"
->
-  <!-- PREVIEW MODE -->
+  tabindex="0">
   {#if preview}
+    <!-- PREVIEW MODE -->
     <SelectionView number={index + 1} {question} />
-    <!-- EDIT MODE -->
   {:else}
+    <!-- EDIT MODE -->
     <!-- TOP BAR -->
     <div class="flex p-1 border-b">
       <div class="ml-auto">
@@ -69,15 +68,14 @@
           aria-label="Remove question"
           class="flex items-center px-3 py-2"
           on:click={() => emit('delete', index)}
-          title="Remove question"
-        >
+          title="Remove question">
           <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
         </button>
       </div>
     </div>
 
     <!-- QUESTION & OPTIONS -->
-    <div class="flex w-full p-5 question-selection-type-inputs" style="height: 100%">
+    <div class="flex p-5 w-full question-selection-type-inputs" style="height: 100%">
       <div class="mr-2">{index + 1}.</div>
       <div class="flex flex-col flex-1" style="height: 100%">
         <!-- QUESTION TEXT -->
@@ -87,11 +85,9 @@
           class="p-2 setup--question-text"
           placeholder="Input a question"
           type="text"
-          rows="3"
-        />
+          rows="3" />
 
         <div bind:this={optionItemsParent} class="flex flex-col justify-center mt-5">
-          <!--  -->
           {#each question.options as option, index}
             <div class="flex items-center mb-2 setup--question-item">
               {#if question.multiple}
@@ -99,13 +95,12 @@
               {:else}
                 <input class="inline-block mr-2" type="radio" disabled />
               {/if}
-              <input bind:value={option} class="flex-1 inline-block p-2" style="max-width: 300px" type="text" />
+              <input bind:value={option} class="inline-block flex-1 p-2" style="max-width: 300px" type="text" />
               <button
                 aria-label="Remove option"
                 class="ml-2 delete-question-button"
                 on:click={() => removeOption(index)}
-                title="Remove option"
-              >
+                title="Remove option">
                 <Icon path={mdiTrashCanOutline} width="25px" height="25px" />
               </button>
             </div>
