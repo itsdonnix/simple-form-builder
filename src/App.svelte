@@ -1,11 +1,13 @@
 <script>
   import Router, { location, link } from 'svelte-spa-router';
   import routes from './routes';
+
+  const appName = import.meta.env.VITE_APP_NAME || window.__simpleFormBuilder_initialDocumentTitle;
 </script>
 
 {#if $location.startsWith('/form/edit') || $location === '/'}
   <header class="text-white main-header margin-page">
-    <a class="app-name" href="/" use:link>Simple Form Builder</a>
+    <a class="app-name" href="/" use:link>{appName}</a>
   </header>
 {/if}
 
