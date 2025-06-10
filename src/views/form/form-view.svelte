@@ -29,8 +29,7 @@
   }
 
   let confirmMessage =
-    'Your answers will be sent, please make sure your answers are correct before submitting the answers. \n Continue sending your answers?';
-
+    "Okay, you're about to send your answers! Double-check everything is perfect before you submit. \n Ready to send them off?";
   function submit() {
     if (confirm(confirmMessage)) {
       loading = true;
