@@ -84,14 +84,18 @@
   let lastDocumentTitle;
 
   onMount(() => {
-    if (!store.isFormExist(form.id)) {
+    const existingForm = store.getForm(id);
+    form = existingForm || form;
+    if (!existingForm) {
       store.addForm(form);
-    } else {
-      form = store.getForm(id);
     }
+
     lastDocumentTitle = document.title;
+    document.title = form.name; // Update document title
+
     document.body.classList.add('bg-color-2');
     mounted = true;
+
     return () => {
       document.title = lastDocumentTitle;
       document.body.classList.remove('bg-color-2');
