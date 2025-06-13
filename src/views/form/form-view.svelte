@@ -128,7 +128,7 @@
       class="flex flex-col justify-center items-center p-3 mx-5 my-10 w-full bg-white shadow-md"
       style="max-width: 700px; min-height: 200px">
       <Icon path={mdiCheck} width="50px" height="50px" />
-      <h1 class="text-xl">Your answer is successfully sent!</h1>
+      <h1 class="text-xl">Woohoo! Your answer has been submitted!</h1>
     </div>
   </div>
 {/if}
