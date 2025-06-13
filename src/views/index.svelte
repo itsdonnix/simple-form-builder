@@ -10,7 +10,7 @@
   });
 </script>
 
-<main class="margin-page">
+<main class="relative margin-page">
   <div class="mt-4">
     <h3 class="p-2 font-bold h3">New</h3>
     <div class="m-3">
@@ -25,7 +25,7 @@
 
   {#if $forms.length}
     <div class="mt-4">
-      <h3 class="p-2 font-bold h3">Recent Forms</h3>
+      <h3 class="sticky top-0 z-10 p-2 font-bold bg-white h3">Recent Forms</h3>
       <div class="flex flex-wrap gap-2 p-3">
         {#each $forms as form (form.id)}
           <a class="flex relative flex-col w-full form-card" href="/form/edit/{form.id}" title={form.title} use:link>
