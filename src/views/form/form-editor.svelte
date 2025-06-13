@@ -107,7 +107,7 @@
   }
 
   // Auto update when form changes
-  $: mounted && form && !!id && store.updateForm(id, form);
+  $: mounted && form && id && store.updateForm(id, form);
   // Get the answers of this form
   $: respondents = $answers.filter((answer) => answer.id === id);
 </script>
