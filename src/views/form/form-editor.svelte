@@ -51,9 +51,7 @@
   }
 
   function deleteQuestion({ detail: index }) {
-    const _questions = form.questions;
-    _questions.splice(index, 1);
-    form.questions = _questions;
+    form.questions = form.questions.filter((_, i) => i !== index);
   }
 
   function onCreateNewQuestionClicked({ detail: questionType }) {
