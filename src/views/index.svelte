@@ -30,7 +30,7 @@
         {#each $forms as form}
           <a class="flex relative flex-col w-full form-card" href="/form/edit/{form.id}" title={form.title} use:link>
             <div class="flex justify-center items-center new-form-card">
-              {form.description}
+              {form.description || 'No description'}
             </div>
             <div class="my-2 text-center">{form.title}</div>
           </a>
