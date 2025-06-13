@@ -38,7 +38,7 @@
 
   let form = { ...DefaultForm };
 
-  if (params && params.id) {
+  if (params?.id) {
     id = params.id;
     form.id = id;
   }
