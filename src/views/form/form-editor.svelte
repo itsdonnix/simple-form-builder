@@ -102,10 +102,8 @@
     };
   });
 
-  $: {
-    document.title = form.title + ' - ' + 'Simple Form Builder';
-  }
-
+  // Update document title when form name changes
+  $: document.title = `${form.title} - Simple Form Builder`;
   // Auto update when form changes
   $: mounted && form && id && store.updateForm(id, form);
   // Get the answers of this form
