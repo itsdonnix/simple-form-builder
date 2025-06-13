@@ -26,7 +26,7 @@
   {#if $forms.length}
     <div class="mt-4">
       <h3 class="p-2 font-bold h3">Recent Forms</h3>
-      <div class="flex flex-col gap-2 m-3 md:flex-row">
+      <div class="flex flex-wrap gap-2 p-3">
         {#each $forms as form}
           <a class="flex relative flex-col w-full form-card" href="/form/edit/{form.id}" title={form.title} use:link>
             <div class="flex justify-center items-center new-form-card">
