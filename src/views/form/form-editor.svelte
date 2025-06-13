@@ -57,15 +57,15 @@
   }
 
   function onCreateNewQuestionClicked({ detail: questionType }) {
-    let newQuestion = { type: questionType };
-    switch (questionType) {
-      case 'selection':
-        newQuestion = { ...newQuestion, ...questionTypeSelection };
-        break;
-      case 'essay':
-        newQuestion = { ...newQuestion, ...questionTypeEssay };
-        break;
-    }
+    const questionDefaults = {
+      selection: questionTypeSelection,
+      essay: questionTypeEssay,
+    };
+
+    const newQuestion = {
+      type: questionType,
+      ...questionDefaults[questionType || {}],
+    };
     addQuestion(newQuestion);
     focusOnNewCreatedQuestion();
   }
