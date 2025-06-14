@@ -54,17 +54,28 @@
     form.questions = form.questions.filter((_, i) => i !== index);
   }
 
+  /**
+   * Handles the creation of a new question when the user clicks the "Add Question" button.
+   * @param {Object} event The event object containing the question type detail.
+   * @param {string} event.detail The type of question to create (e.g., 'selection' or 'essay').
+   */
   function onCreateNewQuestionClicked({ detail: questionType }) {
+    // Define default question configurations based on the type
     const questionDefaults = {
       selection: questionTypeSelection,
       essay: questionTypeEssay,
     };
 
+    // Create a new question object using the appropriate defaults
     const newQuestion = {
       type: questionType,
       ...questionDefaults[questionType || {}],
     };
+
+    // Add the new question to the form's questions array
     addQuestion(newQuestion);
+
+    // Focus on the newly created question for better user experience
     focusOnNewCreatedQuestion();
   }
 
