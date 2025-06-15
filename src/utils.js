@@ -6,6 +6,6 @@ async function digestMessage(message) {
   return hashHex;
 }
 
-export async function generateHash(date = new Date()) {
-  return await digestMessage(date);
+export function generateHash(date = new Date()) {
+  return digestMessage(date);
 }
