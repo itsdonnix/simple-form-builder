@@ -6,6 +6,11 @@ export function getSessionID() {
   return sessionStorage.getItem('randomId');
 }
 
+/**
+ * Sets the current session ID both in the sessionID variable and in sessionStorage.
+ *
+ * @param {string} id - The session ID to set.
+ */
 export function setSessionID(id) {
   sessionID = id;
   sessionStorage.setItem('randomId', id);
