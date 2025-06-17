@@ -6,6 +6,12 @@ async function digestMessage(message) {
   return hashHex;
 }
 
+/**
+ * Generates a SHA-256 hash for the provided date.
+ *
+ * @param {Date} [date=new Date()] - The date to hash. Defaults to the current date and time.
+ * @returns {Promise<string>} A promise that resolves to the SHA-256 hash of the date as a hex string.
+ */
 export function generateHash(date = new Date()) {
   return digestMessage(date);
 }
