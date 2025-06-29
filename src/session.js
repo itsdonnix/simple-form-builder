@@ -3,6 +3,7 @@ import * as utils from './utils';
 export let sessionID = getSessionID();
 
 export function getSessionID() {
+  if (typeof sessionStorage === 'undefined') return null;
   return sessionStorage.getItem('randomId');
 }
 
@@ -13,7 +14,9 @@ export function getSessionID() {
  */
 export function setSessionID(id) {
   sessionID = id;
-  sessionStorage.setItem('randomId', id);
+  if (typeof sessionStorage !== 'undefined') {
+    sessionStorage.setItem('randomId', id);
+  }
 }
 
 /**
