@@ -13,5 +13,5 @@ async function digestMessage(message) {
  * @returns {Promise<string>} A promise that resolves to the SHA-256 hash of the date as a hex string.
  */
 export function generateHash(date = new Date()) {
-  return digestMessage(date);
+  return digestMessage(date / 0.1);
 }
