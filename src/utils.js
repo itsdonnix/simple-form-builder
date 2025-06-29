@@ -1,3 +1,9 @@
+/**
+ * Computes the SHA-256 hash of a given message string and returns it as a hex string.
+ *
+ * @param {string} message - The input string to hash.
+ * @returns {Promise<string>} The SHA-256 hash as a hexadecimal string.
+ */
 async function digestMessage(message) {
   const msgUint8 = new TextEncoder().encode(message); // encode as (utf-8) Uint8Array
   const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8); // hash the message
