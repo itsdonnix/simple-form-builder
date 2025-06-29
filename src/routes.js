@@ -1,6 +1,6 @@
 import { wrap } from 'svelte-spa-router/wrap';
-import * as utils from './utils';
 import { replace } from 'svelte-spa-router';
+import * as utils from './utils';
 
 const routes = {
   '/': wrap({
@@ -16,7 +16,7 @@ const routes = {
     conditions: [
       async () => {
         const hash = await utils.generateHash();
-        replace('/form/edit/' + hash);
+        replace(`/form/edit/${hash}`);
         return false;
       },
     ],
