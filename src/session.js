@@ -2,6 +2,12 @@ import * as utils from './utils';
 
 export let sessionID = getSessionID();
 
+/**
+ * Retrieves the session ID stored in sessionStorage under the key 'randomId'.
+ * Returns null if sessionStorage is not available or no ID is stored.
+ *
+ * @returns {string | null} The stored session ID or null if not found.
+ */
 export function getSessionID() {
   if (typeof sessionStorage === 'undefined') return null;
   return sessionStorage.getItem('randomId');
