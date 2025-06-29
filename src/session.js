@@ -1,5 +1,11 @@
 import * as utils from './utils';
 
+/**
+ * The current session ID stored in memory.
+ * Initialized from sessionStorage if available.
+ *
+ * @type {string | null}
+ */
 export let sessionID = getSessionID();
 
 /**
