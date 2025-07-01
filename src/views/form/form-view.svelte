@@ -8,6 +8,7 @@
   import { mdiCheck } from '@mdi/js';
   import { generateSessionId, getSessionID } from '../../session.js';
   import { DefaultForm } from '../../shared.js';
+  import DateView from '../../components/setup-question-types/date/DateView.svelte';
 
   export let params;
   export let id;
@@ -110,6 +111,8 @@
               <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
             {:else if question.type === 'essay'}
               <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
+            {:else if question.type === 'date'}
+              <DateView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
             {/if}
           {/each}
         </div>

@@ -2,6 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import Selection from './selection/Selection.svelte';
   import Text from './text/Text.svelte';
+  import Date from './date/Date.svelte';
 
   export let index;
   export let question;
@@ -11,6 +12,7 @@
   const TypeToComponent = {
     selection: Selection,
     essay: Text,
+    date: Date,
   };
 </script>
 

@@ -25,6 +25,10 @@
         aria-label="Add question with essay type"
         class="p-1 text-black bg-white"
         on:click={() => emitQuestionType('essay')}>Text</button>
+      <button
+        aria-label="Add question with date type"
+        class="p-1 text-black bg-white"
+        on:click={() => emitQuestionType('date')}>Date</button>
       <button class="p-1 text-black bg-white">Others</button>
     </div>
   </div>

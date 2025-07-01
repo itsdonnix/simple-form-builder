@@ -128,7 +128,7 @@ input[type='checkbox'] {
   flex-basis: 100%;
 }
 
-.question-selection-type.preview :is(input, textarea) {
+:is(.question-selection-type, .question-date-type).preview :is(input, textarea) {
   pointer-events: none;
 }
 

@@ -36,6 +36,12 @@
     multiple: false,
   };
 
+  const questionTypeDate = {
+    ...question,
+    maxDate: null,
+    minDate: null,
+  };
+
   let form = { ...DefaultForm };
 
   if (params?.id) {
@@ -64,6 +70,7 @@
     const questionDefaults = {
       selection: questionTypeSelection,
       essay: questionTypeEssay,
+      date: questionTypeDate,
     };
 
     // Create a new question object using the appropriate defaults
