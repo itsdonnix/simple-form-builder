@@ -2,15 +2,15 @@
   export const questions = [];
   export const respondents = [];
 
-  $: hasAnwers = respondents.length > 0;
+  $: hasAnswers = respondents.length > 0;
   $: info = respondents.length > 0 ? `Answers from (${respondents.length} respondents)` : 'No answers yet';
 </script>
 
 <div class="p-5" tabindex="0">
-  <h2 class="text-xl" class:text-center={!hasAnwers} class:text-gray-500={!hasAnwers}>
+  <h2 class="text-xl" class:text-center={!hasAnswers} class:text-gray-500={!hasAnswers}>
     {info}
   </h2>
-  {#if hasAnwers}
+  {#if hasAnswers}
     <hr class="my-2" />
     <div class="flex flex-col">
       {#each respondents as respondent}
