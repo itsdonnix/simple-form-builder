@@ -1,14 +1,12 @@
 <script>
   import { onMount } from 'svelte';
   import * as store from '../../store.js';
-  import TextView from '../../components/setup-question-types/text/TextView.svelte';
   import Icon from '../../components/Icon.svelte';
   import Required from '../../components/Required.svelte';
-  import SelectionView from '../../components/setup-question-types/selection/SelectionView.svelte';
   import { mdiCheck } from '@mdi/js';
   import { generateSessionId, getSessionID } from '../../session.js';
   import { DefaultForm } from '../../shared.js';
-  import DateView from '../../components/setup-question-types/date/DateView.svelte';
+  import AnswerField from '../../components/setup-question-types/AnswerField.svelte';
 
   export let params;
   export let id;
@@ -107,13 +105,7 @@
         <!-- QUESTION -->
         <div>
           {#each form.questions as question, index}
-            {#if question.type === 'selection'}
-              <SelectionView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-            {:else if question.type === 'essay'}
-              <TextView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-            {:else if question.type === 'date'}
-              <DateView bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
-            {/if}
+            <AnswerField bind:answer={answer.answers[index]} disabled={false} {question} number={index + 1} />
           {/each}
         </div>
 
